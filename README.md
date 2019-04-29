@@ -267,3 +267,177 @@ Operators are special symbols in python that can carry out arithmetic and logica
         print(2 in d) #true
         ```
 
+## Control Flow
+
+### if Statement
+
+```python
+num = 10
+if num > 0:
+  print("Number is positive")
+print("Number is Negative")
+
+#'Number is positive'
+```
+
+### if...else Statement
+
+```python
+num = 10
+if num > 0:
+  print("Number is positive")
+else:
+  print("Number is Negative")
+
+#'Number is positive'
+```
+
+### if...elif...else Statement
+
+```python
+num = 10
+if num > 0:
+  print("Number is positive")
+elif num == 0:
+  print("ZERO")
+else:
+  print("Number is Negative")
+
+#'Number is positive'
+```
+
+### while Loop
+
+The while loop is used to iterate over a block of code as long as the condition is true.
+
+```python
+lst = [10, 20, 30, 40, 50, 60]
+product = 1
+index = 0
+while index < len(lst):
+    product = product * lst[index]
+    index = index + 1
+print("The product of list is {}".format(product))
+
+#'The product of list is 720000000'
+```
+
+### while loop with else
+
+```python
+numbers = [1, 2, 3]
+
+index = 0
+while index < len(numbers):
+    print(numbers[index])
+    index += 1
+else:
+    print("No numbers left in the list.")
+
+# 1
+# 2
+# 3
+# No numbers left in the list.
+```
+
+```python
+# Program to find a prime number
+
+num = int(input("Enter a number: "))
+print(num)
+
+isDivisible = False
+
+i = 2;
+while i < num:
+    if(num % i == 0):
+        isDivisible = True
+        print("{} is divisible by {}".format(num, i))
+    i += 1;
+        
+if isDivisible:
+    print("{} is not a Prime number".format(num))
+else:
+    print("{} is a Prime number".format(num))
+```
+
+### for Loop
+
+```python
+itm = [10, 12, 13, 14, 15]
+
+product = 1
+for el in itm:
+    product *= el
+    
+print("The product of all the items in the list is {}".format(product))
+
+# The product of all the items in the list is 327600
+```
+
+> **range() function** - We can generate a sequence of numbers using range() function. range(10) will generate numbers from 0 to 9 (10 numbers).
+
+```python
+for i in range(10):
+  print(i)
+
+# print range of numbers from 1 to 20 with step size of 2
+for i in range(1, 20 , 2):
+    print(i)
+```
+
+```python
+# Program to find the prime numbers within an interval
+
+index1 = 1
+index2 = 10
+
+print("Prime numbers between {} and {} are:".format(index1, index2))
+
+for num in range(index1, index2+1):
+    if num > 1:
+        isDivisible = False
+        for i in range(2, num):
+            if(num % i == 0):
+                isDivisible = True
+        if not isDivisible:
+            print(num)
+```
+
+### break Statement
+
+```python
+lst1 = [2, 3, 4, 6, 7]
+
+for el in lst1:
+    if(el % 2 != 0):
+        break
+    print(el)
+else:
+    print("inside the for loop")
+print("outside the for loop")
+
+# 2
+# outside the for loop
+```
+
+### continue statement
+
+```python
+lst1 = [2, 4, 6, 7, 8]
+
+for el in lst1:
+    if(el % 2 != 0):
+        continue
+    print(el)
+else:
+    print("inside the for loop")
+print("outside the for loop")
+
+# 2
+# 4
+# 6
+# 8
+# inside the for loop
+# outside the for loop
+```
