@@ -178,3 +178,92 @@ print(type(s)) #<class 'set'>
 #convert string to list
 list("Hello")     #['H', 'e', 'l', 'l', 'o']
 ```
+
+## Python Input and Output
+
+### Output Formatting
+
+```python
+a = 10; b = 20
+print("The value of a is {} and b is {}".format(a, b))
+# 'The value of a is 10 and b is 20'
+```
+
+```python
+a = 10; b = 20
+print("The value of b is {1} and a is {0}".format(a, b))
+# 'The value of b is 20 and a is 10'
+```
+
+```python
+print("Hello {name}, {greeting}!",format(name="Shashank", greeting="Whats Up"));
+# 'Hell0 Shashank, Whats Up!'
+```
+
+```python
+print("Hello {0}, {1}!",format(name="Shashank", greeting="Whats Up"));
+# 'Hell0 Shashank, Whats Up!'
+```
+
+### Python Input
+
+```python
+num = input("Enter a number: ") #gives a textbox
+print(num)
+```
+
+## Operators
+
+Operators are special symbols in python that can carry out arithmetic and logical computation. The value that the operator operates on is called the operand.
+
+### Operator Types
+
+1. **Arithmetic**
+    ```python
+    #addition (+)
+    #subtraction (-)
+    #multiplication (*)
+    #division (/)
+    #modulo division (%)
+    #Floor Division (//)
+    #Exponent (**)
+    ```
+2. **Comparison**
+    > <, >, ==, !=, >=, <=
+3. **Logical (Boolean)**
+    > and, or and not
+4. **Bitwise**
+    > &, |, ~, ^, >>, <<
+5. **Assignment**
+    ```python
+    #Add AND (+=)
+    #subtract AND (-=)
+    #Multiply AND (*=)
+    #Divide AND (/=)
+    #Modulus AND (%=)
+    #Floor division AND (//=)
+    #Exponent AND (*=)
+    ```
+6. **Special**
+    - **Identity Operator** - **is and is not** are identity operators. They are used to check if two values are located on the same part of the memory.
+        ```python
+        a = 5; b = 5
+        print(a is b) #true
+
+        L1 = [1, 2, 3]
+        L2 = [1, 2, 3]
+        print(L1 is L2) #false
+
+        s1 = "ABCD"
+        s2 = "ABCD"
+        print(s1 is not s2) #false
+        ```
+    - **Membership Operators** - **in and in not** are membership operators. They are used to test weather a value or variable is found in a sequence (string, list, tuple, set or dictionary).
+        ```python
+        l = [1, 2, 3, 4]
+        print(1 in l) #true
+
+        d = {1: "a", 2: "b"}
+        print(2 in d) #true
+        ```
+
