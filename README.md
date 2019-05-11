@@ -441,3 +441,93 @@ print("outside the for loop")
 # inside the for loop
 # outside the for loop
 ```
+
+## List
+
+List is one of the sequence data-structure. List are the collection of items (Strings, integers or even other lists). List are enclosed in []. Each item in the list have assigned index. 
+
+>Lists are mutable, which means they can be changed.
+
+### List Creation
+```python
+emptyList = []
+lst = ['one', 'two', 'three'] # list of strings
+lst2 = [1, 2, 3, 4] # list of integers
+lst3 = [[1, 2], [3, 4]] #list of lists
+lst4 = [1, 'two', 3.45 ] #list of different data types 
+```
+
+### List Length
+```python
+len(lst)
+```
+
+### List Append
+```python
+lst.append('four')
+# will add 'four' at the end of the list
+```
+
+### List Insert
+```python
+lst.insert(2, "three")
+# will add 'three' at index 2
+```
+
+### List Remove
+```python
+lst.remove('three')
+# will remove the first occurance of 'three' from the list
+```
+
+### List Append & Extend
+```python
+lst = [1, 2, 3, 4]
+lst2 = [5, 6]
+
+lst.append(lst2) # [1, 2, 3, 4, [5, 6]]
+
+lst.extend(lst2) # [1, 2, 3, 4, 5, 6]
+# extend will join the lst2 with lst
+```
+
+### List Delete
+```python
+del lst[1] # removes the element at index 1
+
+# or we can use pop() method
+a = pop(1)
+```
+
+### List related keywords in Python
+```python
+# keyword 'in' is used to test if an element is in a list
+lst = [1, 2, 3, 4]
+if 2 in lst:
+    print("True")
+
+#keyword 'not' can be combined with 'in;
+if 4 not in lst:
+    print("False")
+```
+
+### List Reverse
+```python
+lst.reverse()
+```
+
+### List Sorting
+
+The easiest way to sort a List is to use sorted(list) function. That takes a list and returns a new list in sorted order. The original list is not changed.
+>The sorted() optional argument, reverse=True, nakes it sort backwards
+
+```python
+numbers = [3, 2, 5, 4, 1]
+
+sorted_lst = sorted(numbers)
+print(sorted_lst) # 1, 2, 3, 4, 5
+
+reverse_lst = sorted(numbers, reverse=True)
+print(reverse_lst) # 5, 4, 3, 2, 1
+```
+
