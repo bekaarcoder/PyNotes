@@ -531,3 +531,248 @@ reverse_lst = sorted(numbers, reverse=True)
 print(reverse_lst) # 5, 4, 3, 2, 1
 ```
 
+### List having multiple reference
+```python
+lst = [1, 2, 3, 4]
+abc = lst
+abc.append(5)
+
+print(lst) # 1, 2, 3, 4, 5
+```
+
+### String split to create a list
+```python
+s = "Lets, learn, python"
+slst = s.split(',')
+print(slst) # ['Lets', 'learn', 'python']
+```
+>Default split is white-character: space or tab
+
+### List Indexing
+
+Accessing elements in a list is called indexing.
+
+```python
+lst = [1, 2, 3, 4]
+lst[1] # 2
+# print the last element using negative index
+last[-1] # 4
+```
+
+### List Slicing
+
+>syntax - [start: end: step size]
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+#print all the numbers
+numbers[:]
+
+#print from index 1 to 4
+numbers[1:4] # [2, 3, 4], last index is not included
+
+#print alternate numbers
+numbers[1::2] # [2, 4, 6, 8, 10]
+numbers[::2] # [1, 3, 5, 7, 9]
+```
+
+### List extended using '+'
+```python
+lst1 = [1, 2, 3]
+lst2 = ['four', 'five']
+lst = lst1 + lst2
+print(lst) # [1, 2, 3, 'four', 'five']
+```
+
+### List Count
+```python
+#print frequency of element in the list
+numbers = [1, 2, 3, 1, 4, 1]
+print(numbers.count(1)) # 3
+```
+
+### List Looping
+```python
+lst = [1, 2, 3, 4]
+for ele in lst:
+    print(ele)
+```
+
+### List Comprehensions
+
+List comprehensions provide a concise way to create lists.
+
+```python
+# without list comprehension
+squares = []
+for i in range(10):
+    squares.append(i**2)
+print(squares)
+
+# with list comprehension
+squares = [(i**2) for i in range(10)]
+print(squares)
+```
+
+### Nested List Comprehensions
+```python
+# transpose of a matrix without list comprehension
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+transpose = []
+for i in range(3):
+    lst = []
+    for row in matrix:
+        lst.append(row[i])
+    transpose.append(lst)
+    
+print(transpose)
+
+# with list comprehension
+transpose_comp = [[row[i] for row in matrix] for i in range(3)]
+print(transpose_comp)
+```
+
+## Tuples
+
+A tuple is similar to list. The difference between the two is that we can't change the elements of tuple once it is assigned whereas in the list, elements can be changed.
+
+```python
+# empty tuple
+t = ()
+
+# tuple having int
+t = (1, 2, 3)
+
+#tuple having different data-types
+t = (1, "two", 3.5)
+
+# nested tuple
+t = (1, (2, 3, 4), [5, 6, 7])
+```
+>A comma is required at the end for creating a tuple. Also, paranthesis is optional for creating a tuple
+```python
+t = ("John")
+type(t) # str
+
+t = ("John",)
+type(t) # tuple
+
+t = "John",
+type(t) # tuple
+```
+
+### Accessing elements in tuple
+
+```python
+t = ('one', 'two', 'three', 'four')
+
+print(t[1]) # two
+
+# use negative index to print the last element
+print(t[-1]) # four
+
+# slicing
+print(t[1:3]) # 'two', 'three'
+```
+
+### Changing a Tuple
+
+Unlike lists, tuples are immutable. So elements cannot be changed once it has been assigned. But, if the element is itself a mutable datatype like list, its nested items can be changed.
+
+```python
+tpl = (1, 2, 3, 4, [5, 6, 7])
+t[2] = 21 # TypeError: 'tuple' object does not support item assignment
+
+tpl[4][2] = "Seven"
+print(tpl) # (1, 2, 3, 4, [5, 6, 'Seven'])
+```
+
+### Concatinating a tuple
+```python
+tp1 = (1, 2) + (3, 4) # (1, 2, 3, 4)
+```
+
+### Repeat elements in a tuple for number of times
+```python
+t = (('John', ) * 4)
+print(t) # ('John', 'John', 'John', 'John')
+```
+
+### Tuple Deletion
+
+We cannot delete individual element from a tuple as tuples are immutable. But we can delete the entire tuple
+
+```python
+t = (1, 2, 3, 4)
+
+del t
+```
+
+### Tuple Count
+
+Returns the frequency of a particular element in the tuple.
+```python
+t = (1, 2, 1, 2, 3, 5, 1)
+t.count(1) # 3
+```
+
+### Tuple Index
+
+Returns the index of the first matched element provided
+```python
+t = (1, 2, 1, 2, 3, 5, 1)
+t.index(2) # 1
+```
+
+### Tuple Membership
+
+Test if an item exist in a tuple or not, using the keyword in.
+```python
+t = (1, 2, 1, 2, 3, 5, 1)
+print(1 in t) # True
+print(7 in t) # False
+```
+
+### Tuple Length
+```python
+t = (1, 2, 1, 2, 3, 5, 1)
+len(t) # 7
+```
+
+### Tuple Sort
+
+Takes elements in the tuple and return a new sorted list.
+```python
+t = (1, 2, 1, 2, 3, 5, 1)
+sort_t = sorted(t)
+print(sort_t) # [1, 1, 1, 2, 2, 3, 5]
+```
+
+### Tuple max
+
+Gets the largest element in the tuple.
+```python
+t = (1, 2, 1, 2, 3, 5, 1)
+print(max(t)) # 5
+```
+
+### Tuple min
+
+Gets the smallest element in the tuple
+```python
+t = (1, 2, 1, 2, 3, 5, 1)
+print(min(t)) # 1
+```
+
+### Tuple Sum
+
+Returns the sum of elements in the tuple.
+```python
+t = (1, 2, 1, 2, 3, 5, 1)
+print(sum(t)) # 15
+```
