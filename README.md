@@ -776,3 +776,117 @@ Returns the sum of elements in the tuple.
 t = (1, 2, 1, 2, 3, 5, 1)
 print(sum(t)) # 15
 ```
+
+## Sets
+
+A set is an unordered collection of items. Every element is unique (no duplicates). It is mutable, so we can add or remove items from set. Sets can also be used to perform mathematical set operations like union, intersection, symmetric difference, etc.
+
+### Set Creation
+```python
+s = {1, 2, 3}
+
+# set doesn't allow duplicate items
+s = {1, 2, 1, 3, 4}
+print(s) # {1, 2, 3, 4}
+
+# we can make set from a list
+s = set([1, 2, 3, 1])
+print(s) # {1, 2, 3}
+
+# initialize an empty set
+s = set()
+```
+
+### Add element to a set
+
+We can add single element using add() method.
+
+We can add multiple element using update() method.
+
+```python
+s = {1, 3}
+
+print(s[1]) # TypeError : 'set' object doesn't support indexing
+
+# add single element
+s.add(2) # {1, 2, 3}
+
+# add multiple element
+s.update([4, 5, 6]) # {1, 2, 3, 4, 5, 6}
+```
+
+### Remove element from set
+
+A particular item can be removed from sets using discard() and remove() method.
+```python
+s = {1, 2, 3, 4, 5}
+
+s.discard(4) # {1, 2, 3, 4}
+s.remove(2) # {1, 3, 4}
+
+# difference between remove and discard
+s.remove(7) # KeyError, 7 does not exist in the set
+s.discard(7) # {1, 2, 3, 4, 5}, no error
+
+# remove random elements from set using pop
+s.pop()
+
+# remove all the items from the set
+s.clear()
+```
+
+### Python Set Operations
+```python
+s1 = {1, 2, 3, 4, 5}
+s2 = {2, 4, 6, 7, 8}
+
+# union of two sets using | operator
+print(s1 | s2) # {1, 2, 3, 4, 5, 6, 7, 8}
+
+# another way of union
+print(s1.union(s2))
+
+# intersection of two sets using & operator
+print(s1 & s2) # {2, 4}
+
+# another way of intersection
+print(s1.intersection(s2))
+```
+
+>**Set Difference** - Set of elements that are only in s1 but not in s1
+```python
+print(s1 - s2) # {1, 3, 5}
+
+# another way for set difference
+print(s1.difference(s2))
+```
+
+>**Symmetric Difference** - Set of elements in both s1 and s2, except those that are common in both.
+```python
+print(s1 ^ s2) # {1, 3, 5, 6, 7, 8}
+
+# another way for symmetric difference
+print(s1.symmetric_difference(s2))
+
+# check x is subset of y
+x = {1, 2}
+y = {1, 2, 3, 4}
+
+print(x.issubset(y)) # True
+print(y.issubset(x)) # False
+```
+
+### Frozen Sets
+
+Frozen sets are immutable sets. Theys are created using the function frozenset().
+>Sets being mutable are unhashable, so they can't be used as a dictionary keys. Frozen sets are hashable, so they can be used as keys to a dictionary.
+
+This datatype supports methods like copy(), difference(), intersection(), isdisjoint(), issubset(), issuperset(), symmetric_difference() and union().
+
+```python
+fs = frozenset([1, 2, 3, 4, 5])
+
+fs.add(6) # AttributeError
+print(fs[1]) # TypeError
+```
+
