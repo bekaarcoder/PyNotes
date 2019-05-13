@@ -1014,3 +1014,96 @@ d = {k + 'c': v ** 2 for k, v in dic.items() if v > 2}
 print(d)
 # {'cc': 9, 'dc': 16}
 ```
+
+## Strings
+
+A string is a sequence of characters.
+
+Strings can be created using single or double quotes. Triple quotes are used in python to create a multiline strings and docstrings.
+
+```python
+mystring = 'Hello'
+
+mystring = "Hello"
+
+mystring = '''Hello'''
+```
+
+### Access character in a string
+
+We can access individual characters using indexing and a range of characters using slicing.
+
+```python
+print(mystring[0]) # H
+
+print(mystring[-1]) # o
+
+print(mystring[2:4]) # ll
+
+print(mystring[12]) # IndexError
+
+print(mystring[1.5]) # TypeError
+```
+
+### Change or Delete a string
+
+Strings are immutable. We can simply reassign different strings to the same name.
+
+```python
+mystring[4] = 'D' # TypeError
+
+# delete the string
+del mystring
+```
+
+### String Operations
+
+1. **Concatenation** - The '+' can be used to concatinate string. The '*' can be used to repeat the strings for a given number of times.
+    ```python
+    s1 = "Hello"
+    s2 = "World"
+
+    print(s1 + s2) # HelloWorld
+
+    print(s1 * 3) # HelloHelloHello
+    ```
+2. **Iterating through string**
+    ```python
+    string = "Hello World"
+    count = 0
+    for l in string:
+        if l == 'o':
+            count += 1
+    print(count, 'o letters found') # 2 o letters found
+    ```
+3. **Membership Test**
+    ```python
+    print('l' in string) # True
+    ```
+
+### String Methods
+
+1. **lower()**
+    ```python
+    print(string.lower()) # hello world
+    ```
+2. **upper()**
+    ```python
+    print(string.upper()) # HELLO WORLD
+    ```
+3. **join()**
+    ```python
+    print(string.split(' ')) # ['Hello', 'World']
+    ```
+4. **split()**
+    ```python
+    print('-'.join(string)) # H-e-l-l-o- -W-o-r-l-d
+    ```
+5. **find()**
+    ```python
+    print(string.find('lo')) # 3
+    ```
+6. **replace()**
+    ```python
+    print(string.replace('World', 'Earth')) # Hello Earth
+    ```
