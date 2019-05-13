@@ -890,3 +890,127 @@ fs.add(6) # AttributeError
 print(fs[1]) # TypeError
 ```
 
+## Dictionary
+
+Dictionary is an unordered collection of items. A dictionary has a key: value pair.
+
+### Dictionary Creation
+
+```python
+# empty dictionary
+my_dict = {}
+
+#dict with integer keys
+my_dict = {1: 'abc', 2: 'xyz'}
+
+# dict with mixed keys
+my_dict = {'name': 'John', 1: ['abc', 'xyz']}
+
+# creating dict using dict()
+my_dict = dict()
+
+# create dict with list of tuples
+my_dict = dict([(1, 'abc'), (2, 'xyz')])
+```
+
+### Dictionary Access
+
+```python
+my_dict = {'name': 'John', 'age': 27, 'address': 'USA'}
+
+# get name
+print(my_dict['name']) # John
+
+print(my_dict['degree']) # KeyError
+
+# another way of accessing key
+print(my_dict.get('address')) # USA
+
+# if key is not present, it will give None using get()
+print(my_dict.get('degree')) # None
+```
+
+### Add or Modify Elements in Dictionary
+
+```python
+my_dict = {'name': 'John', 'age': 27, 'address': 'USA'}
+
+# update name
+my_dict['name'] = 'Raju'
+
+# add a new key
+my_dict['degree'] = 'M.Tech'
+```
+
+### Delete or Remove Element from Dictionary
+
+```python
+my_dict = {'name': 'John', 'age': 27, 'address': 'USA'}
+
+# remove a particular element
+print(my_dict.pop('age')) # 27
+
+# remove an arbitrary key
+my_dict.popitem()
+
+# delete a particular key
+del my_dict['name']
+
+# remove all items
+my_dict.clear()
+
+# delete dictionary
+del my_dict
+```
+
+### Dictionary Methods
+
+1. **copy()** - Returns a copy of the dictionary.
+    ```python
+    copy_dict = my_dict.copy()
+    ```
+2. **fromkeys()** - Returns a dictionary with specified keys and value.
+    ```python
+    subjects = {}.fromkeys(['Math', 'English', 'Science'], 0)
+    print(subjects) # {'Math': 0, 'English': 0, 'Science': 0}
+    ```
+3. **items()** - Returns a list containing a tuple for each key value pair.
+    ```python
+    subjects = {'Math': 0, 'English': 0, 'Science': 0}
+    print(subjects.items())
+    # dict_items([('Math', 0), ('English', 0), ('Science', 0)])
+    ```
+4. **keys()** - Returns a list containing the dictionary's keys.
+    ```python
+    subjects = {'Math': 0, 'English': 0, 'Science': 0}
+    print(subjects.keys())
+    # dict_keys(['Math', 'English', 'Science'])
+    ```
+5. **values()** - Returns the list of all the values in the dictionary.
+    ```python
+    subjects = {'Math': 0, 'English': 0, 'Science': 0}
+    print(subjects.values())
+    # dict_values([0, 0, 0])
+    ```
+
+### Dictionary Comprehension
+
+```python
+d = {1: 'a', 2: 'b', 3: 'c'}
+for pair in d.items():
+    print(pair)
+# (1, 'a')
+# (2, 'b')
+# (3, 'c')
+
+# creating a dict with only pairs where the value is larger than 2
+dic = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+new_d = {k:v for k, v in dic.items() if v > 2}
+print(new_d)
+# 'c': 3, 'd': 4}
+
+# we can also perform operations on key value pairs
+d = {k + 'c': v ** 2 for k, v in dic.items() if v > 2}
+print(d)
+# {'cc': 9, 'dc': 16}
+```
