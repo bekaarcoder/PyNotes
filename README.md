@@ -1162,3 +1162,145 @@ print(global_var) # This is global var
 
 print(local_var) # NameError: name 'local_var' is not defined
 ```
+
+### Types of function in Python
+
+1. Built-in Function
+2. user-defined function
+
+### Built-in Functions
+
+- **abs()** - Find the absolute value
+    ```python
+    num = -100
+    print(abs(num)) # 100
+    ```
+- **all()** - This will return 'True' if all the elements in the iterable are true, else will return 'False' if any of the element in the iterable is false.
+    ```python
+    lst = [1, 2, 3, 4]
+    lst2 = [0, 1, 2]
+    lst = []
+
+    print(all(lst)) # True
+    print(all(lst2)) # False
+    print(all(lst3)) # True, empty list are always true
+    ```
+- **dir()** - Returns the list of valid attributes of the object.
+    ```python
+    numbers = [1, 2]
+    print(dir(numbers))
+    # ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+    ```
+- **divmod()** - Takes two numbers and returns a pair of numbers(tuple) consisting of their quotient and remainder.
+    ```python
+    print(divmod(9, 2)) # (4, 1)
+    ```
+- **enumerate()** - Adds counter to an iterable and returns it.
+    ```python
+    numbers = [1, 2, 3, 4]
+    for index, num in enumerate(numbers):
+        print("index {0} has value {1}".format(index, num))
+
+    # index 0 has value 1
+    # index 1 has value 2
+    # index 2 has value 3
+    # index 3 has value 4
+    ```
+- **filter()** - Constructs an iterator from elements of an iterable for which a function return true.
+    ```python
+    def print_positive_numbers(num):
+    if(num > 0):
+        return num
+    
+    numbers_list = range(-10, 10)
+
+    positive_numbers = list(filter(print_positive_numbers, numbers_list))
+    print(positive_numbers)
+    # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    ```
+- **isinstance()** - Checks if the object (first argument) is an instance or subclass of classinfo class (second argument).
+    ```python
+    lst = [1, 2, 3, 4]
+    print(isinstance(lst, list)) # True
+
+    lst = (1, 2, 3)
+    print(isinstance(lst, list)) # False, as lst is a tuple
+    ```
+- **map()** - Applies a function to all the element in a list.
+    ```python
+    numbers = [1, 2, 3, 4]
+
+    def num_square(num):
+        return num**2
+
+    squares = list(map(num_square, numbers))
+    print(squares) # [1, 4, 9, 16]
+    ```
+- **reduce()** - Performs some computation on a list and returns the result.
+    ```python
+    from functools import reduce
+
+    numbers = [1, 2, 3, 4]
+    def multiply(x, y):
+        return x*y
+
+    product = reduce(multiply, numbers)
+    print(product) # 24
+    ```
+
+### User Defined Functions
+
+Functions that we define ourselves to do a specific task are referred as user-defined functions. If we use functions written by others in the form of library, it can be termed as library functions.
+
+**Advantages**
+1. It helps to decompose a large program into small segments which make program easy to understand, maintain and debug.
+2. If repeated code occurs in a program, function can be used to include those codes and execute when needed by calling that function.
+3. Programmers working on large project can divide the workload by making different functions.
+
+## Function Arguments
+
+Variables that we pass into a function.
+
+```python
+def greet(name, message):
+    print("Hello {0}, {1}".format(name, message))
+
+# name and message are arguments of function greet
+```
+
+### Different forms of Arguments
+
+1. **Default Arguments** - We can provide a default value to an argument by using the assignment operator (=)
+    ```python
+    def greet(name, message="Good Morning"):
+        print("Hello {0}, {1}".format(name, message))
+
+    greet("John"); # Hello John, Good Morning
+    greet("John", "Good Night") # Hello John, Good Night
+    ```
+    >Once we have a default argument, all the arguments to its right must also have default values
+    ```python
+    def greet(message="Good Morning", name):
+        print("Hello {0}, {1}".format(name, message))
+
+    greet("John") # SyntaxError
+    ```
+2. **Keyword Arguments** - kwargs allow you to pass keyworded variable length of arguments to a function.
+    ```python
+    def greet(**kwargs):
+        if kwargs:
+          print("Hello {0}, {1}".format(name, message))
+
+    greet(name="John", msg="Good Day") # Hello John, Good Day  
+    ```
+3. **Arbitrary Arguments** - Sometimes, we don't know in advance the number of arguments that will be passed into a function. This kind of situation can be handled using arbitrary arguments.
+    ```python
+    def greet(*names):
+        for name in names:
+            print("Hello {0}".format(name))
+
+    greet("John", "Jane", "Joe")
+    # Hello John
+    # Hello Jane
+    # Hello Joe
+    ```
