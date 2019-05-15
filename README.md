@@ -1107,3 +1107,58 @@ del mystring
     ```python
     print(string.replace('World', 'Earth')) # Hello Earth
     ```
+
+## Python Functions
+
+Function is a group of related statements that perform a specific task. It avoids repetition and makes code reusable.
+
+**Syntax**
+```python
+# defining a function
+def print_name(name):
+    print("Hello" + str(name))
+
+# calling a function
+print_name("John") # This will print 'John'
+```
+
+### Return Statement
+
+Return statement is used to exit a function and go back to the place where it was called.
+1. return Statement can contain an expression which gets evaluated and the value is returned.
+2. if there is no expression in the statement or the return statement itself is not present inside a function, then the function will return None object.
+
+```python
+def get_sum(lst):
+    _sum = 0
+    for num in lst:
+        _sum += num
+    return _sum
+
+s = get_sum([1, 2, 3, 4])
+print(s) # 10
+```
+
+### Scope and Life Time of Variables
+
+- Scope of a variable is the portion of a program where the variable is recognized.
+- Variable defined inside a function is not visible from outside. Hence, they have a local scope.
+- Lifetime of a variable is the period throughout which the varibale exists in the memory.
+- The lifetime of a variable inside a function is as long as the function executes.
+- Variables are destroyed once we return from the function.
+
+```python
+global_var = "This is global var"
+def test_scope():
+    local_var = "This is local variable"
+    print(local_var)
+    print(global_var)
+    
+test_scope()
+# This is local variable
+# This is global var
+
+print(global_var) # This is global var
+
+print(local_var) # NameError: name 'local_var' is not defined
+```
