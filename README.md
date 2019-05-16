@@ -1304,3 +1304,97 @@ def greet(name, message):
     # Hello Jane
     # Hello Joe
     ```
+
+## Recursion
+
+It is possible for the function to call itself. These type of construct are termed as recursive function.
+
+```python
+# factorial of a number using recursion
+
+def factorial(num):
+    return 1 if num == 1 else (num * factorial(num - 1))
+
+num = 5
+print("Factorial of {0} is {1}".format(num, factorial(num)))
+```
+
+**Advantages**
+
+1. Make look code good and elegant.
+2. A complex task can be broken down into simpler sub-problems using recursion.
+3. Sequence generation is easier with recursion than using some nested iteration.
+
+**Disadvantages**
+
+1. Sometimes logic behind recursion is hard to follow through.
+2. Recursive call are inefficient as they take up lot of time and memory.
+3. Recursive functions are hard to debug.
+
+## Anonymous/Lambda Function
+
+Anonymous function is a function that is defined without a name. Anonymous functions are defined using the labda keyword.
+
+```python
+double = lambda x: x*2
+# double is the function name, 'x' is the argument, 'x*2' is the output
+
+print(double(5)) # 25
+
+# find even numbers in list with filter
+lst = [1, 2, 3, 4]
+even_lst = list(filter(lambda x: (x%2 == 0), lst))
+print(even_lst)
+
+#find square of a num with map()
+lst = [1, 2, 3, 4]
+squares = list(map(lambda x: x**2, lst))
+print(squares)
+```
+
+## Modules
+
+Modules refer to a file containing Python statements and definitions. We use modules to break down large programs into small manageable and organized files. It provides reusability of code.
+
+### Importing a Module
+
+We use import keyword to import a module.
+```python
+import math
+print(math.pi) # 3.141592653589793
+
+import datetime
+print(datetime.datetime.now()) # 2019-05-16 17:26:21.914896
+```
+
+### Importing a Module with renaming
+
+```python
+import math as m
+print(m.pi)
+```
+
+### from...import statement
+
+We can import specific names from a module without importing the module as a whole.
+```python
+from datetime import datetime
+datetime.now()
+```
+
+### import all names
+```python
+from math import *
+print(pi)
+```
+
+## Packages
+
+Packages are way of structuring python's module namespace by using "dotted module names".
+
+A directory must contain a file names with init.py in order for python to consider it as a package. This file can be left empty but we generally place the initialization code for that package in this file.
+
+```python
+# import modules from packages using the dot(.) operator
+import Game.Image.open
+```
