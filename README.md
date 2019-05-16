@@ -1398,3 +1398,156 @@ A directory must contain a file names with init.py in order for python to consid
 # import modules from packages using the dot(.) operator
 import Game.Image.open
 ```
+
+## File Handling
+
+### Opening a File
+
+Python has a built-in function open() to open a file. This function returns a file object, also called a handle, as it is used to read or modify the file accordingly.
+
+```python
+f = open('example.txt') # opens the file in current directory
+```
+
+**Python File Modes**
+
+- 'r' - Open a file for reading (default)
+- 'w' - Open a file for writing. Creates a new file if it does not exist or truncates the file if it exists.
+- 'x' - Open a file for exclusive creation. If the file already exists, the operation fails.
+- 'a' - Open for appending at the end of the file without truncating it. Creates a new file if it does not exist.
+- 't' - Open in text mode (default)
+- 'b' - Open in binary mode.
+- '+' - Open a file for updating (reading and writing).
+
+```python
+f = open('example.txt', 'r')
+f = open('example.txt', 'w')
+```
+
+### Closing a File
+
+Closing a file will free up the resources that were tied with the file and is done using the close() method.
+
+Python has a garbage collector to clean up unreferenced objects but, we must not rely on it to close the file.
+
+```python
+f = open('example.txt')
+f.close()
+```
+
+>If an exeception occurs when we are performing some operation with the file, the code exits without closing the file. So, try...finally block can be used to avoid this situation.
+
+```python
+try:
+    f = open('example.txt')
+    # perform file operation
+finally:
+    f.close()
+```
+
+### Writing to a File
+
+In order to write into a file, we need to open it in write 'w', append 'a' or exclusive creation 'x' mode.
+
+Writing a string or sequence of bytes is done using write() method. This method return the number of characters written to the file.
+
+```python
+f = open('example.txt', 'w')
+f.write("This is a first line.\n")
+f.write("Second line.\n")
+f.close()
+```
+
+### Reading from a File
+
+We can use the read(size) method to read in size number of data. If size parameter is not specified, it reads and returns up to the end of the file.
+
+```python
+f.open(''example.txt', 'r')
+f.read(); # 'This is the first line.\nSecond line.\n'
+
+f.read(4) # 'This'
+```
+
+> We can change our current file cursor using the **seek()** method. Similarly, **tell()** method returns the current position.
+
+```python
+f.tell()
+
+f.seek(0) # brings the file cursor to initial position
+```
+
+> We can read a file line-by-line using a for loop.
+```python
+f.seek(0)
+for line in f:
+    print(line)
+```
+
+> We can also use readline() method to read individual lines of a file. This method reads a file till the newline, including the newline character
+```python
+f = open('example.txt', 'r')
+f.readline()
+```
+
+>The **readlines()** method returns a list of remaining lines of the entire file. All these reading method return empty value when end of the file (EOF) is reached.
+
+```python
+f.readlines() # Retirns each lines in a list
+```
+
+### Renaming and Deleting a File
+
+os module brings the support in python to rename/delete a file
+
+```python
+import os
+
+os.rename("test.txt", "renamed.txt")
+
+os.remove("sample.txt")
+```
+
+### Python Directory and File Management
+
+**Get Current Directory**
+
+We can get the present working directory using the getcwd() method. This methods returns the current working directory in the form of string.
+```python
+import os
+os.getcwd()
+```
+
+**Changing Directory**
+
+We can change the directory using chdir() method. The new path must be supplied as a string. We can use both forward (/) or backward (\\) slash to separate path elements.
+
+```python
+os.chdir("Users/sample/")
+```
+
+**List Directories and Files**
+
+All files and subdirectories inside a directory can be listed using the listdir() method
+```python
+os.listdir(os.getcwd())
+```
+
+**Making a new Directory**
+
+We can make a new directory with mkdir() method.
+```python
+os.mkdir("newdir")
+```
+
+**Remove Directory**
+
+rmdir() method is used to remove an empty directory. To remove a non-empty directory, we have to use rmtree() method inside the shutil module.
+
+```python
+os.rmdir("newdir") # remove the empty directory
+
+# remove non-empty directory
+import shutil
+shutil.rmtree("testdir") # testdir is non-empty
+```
