@@ -1551,3 +1551,55 @@ os.rmdir("newdir") # remove the empty directory
 import shutil
 shutil.rmtree("testdir") # testdir is non-empty
 ```
+
+## Exception Handling
+
+Errors that occur at runtime are called exceptions.
+
+Python has many built-in exceptions which forces your program to output an error when something in it goes wrong. When these exception occur, it causes the current process to stop and passes it to the calling process until it is handled. If not handles, our program will crash.
+
+### Catching Exceptions
+
+Exceptions can be handles using the try statement.
+
+A critical operation which can raise exception is placed inside the try clause and the code that handles the exception is written in except clause.
+
+```python
+import sys
+lst = [1, 2, 'b']
+for item in lst:
+    try:
+        r = 1 / int(item)
+    except:
+        print("Oops!", sys.exc_info()[0], "Occured.")
+print(r)
+```
+
+### Raising Exception
+
+We can forcefully raise an exception using the keyword raise. We can also optionally pass in value to the exception to clarify why that exception was raised.
+
+```python
+raise KeyboardInterrupt
+
+raise MemoryError("This is a memory error")
+
+#Example
+try:
+    num = int(input("Enter a positive number"))
+    if num < 0 :
+        raise ValueError("Error: Entered number is negative")
+except ValueError as e:
+    print(e)
+```
+
+### try...finally
+
+finally clause is executed no matter what, and is generally used to release external resource.
+
+```python
+try:
+    f = open("sample.txt")
+finally:
+    f.close()
+```
