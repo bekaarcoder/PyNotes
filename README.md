@@ -38,6 +38,7 @@ global = 1 #invalid syntax
 A variable is a location in memory used to store some data (value).
 
 ### Variable Assignments
+
 ```python
 a = 10
 b = 5.5
@@ -45,12 +46,14 @@ c = "Machine Learning"
 ```
 
 ### Multiple Assignments
+
 ```pyhton
 a, b, c = 10, 5.5, "Machine Learning"
 a = b = c = "ML"
 ```
 
 ### Storage Locations
+
 ```python
 x = 3
 print(id(x))    #print address of varibale x
@@ -169,6 +172,7 @@ str(20)   #convert integer to string - "20"
 ```
 
 We can convert one sequence to other
+
 ```python
 a = [1, 2, 3]
 print(type(a)) #<class 'list'>
@@ -219,53 +223,57 @@ Operators are special symbols in python that can carry out arithmetic and logica
 ### Operator Types
 
 1. **Arithmetic**
-    ```python
-    #addition (+)
-    #subtraction (-)
-    #multiplication (*)
-    #division (/)
-    #modulo division (%)
-    #Floor Division (//)
-    #Exponent (**)
-    ```
+   ```python
+   #addition (+)
+   #subtraction (-)
+   #multiplication (*)
+   #division (/)
+   #modulo division (%)
+   #Floor Division (//)
+   #Exponent (**)
+   ```
 2. **Comparison**
-    > <, >, ==, !=, >=, <=
+   > <, >, ==, !=, >=, <=
 3. **Logical (Boolean)**
-    > and, or and not
+   > and, or and not
 4. **Bitwise**
-    > &, |, ~, ^, >>, <<
+   > &, |, ~, ^, >>, <<
 5. **Assignment**
-    ```python
-    #Add AND (+=)
-    #subtract AND (-=)
-    #Multiply AND (*=)
-    #Divide AND (/=)
-    #Modulus AND (%=)
-    #Floor division AND (//=)
-    #Exponent AND (*=)
-    ```
+   ```python
+   #Add AND (+=)
+   #subtract AND (-=)
+   #Multiply AND (*=)
+   #Divide AND (/=)
+   #Modulus AND (%=)
+   #Floor division AND (//=)
+   #Exponent AND (*=)
+   ```
 6. **Special**
-    - **Identity Operator** - **is and is not** are identity operators. They are used to check if two values are located on the same part of the memory.
-        ```python
-        a = 5; b = 5
-        print(a is b) #true
 
-        L1 = [1, 2, 3]
-        L2 = [1, 2, 3]
-        print(L1 is L2) #false
+   - **Identity Operator** - **is and is not** are identity operators. They are used to check if two values are located on the same part of the memory.
 
-        s1 = "ABCD"
-        s2 = "ABCD"
-        print(s1 is not s2) #false
-        ```
-    - **Membership Operators** - **in and in not** are membership operators. They are used to test weather a value or variable is found in a sequence (string, list, tuple, set or dictionary).
-        ```python
-        l = [1, 2, 3, 4]
-        print(1 in l) #true
+     ```python
+     a = 5; b = 5
+     print(a is b) #true
 
-        d = {1: "a", 2: "b"}
-        print(2 in d) #true
-        ```
+     L1 = [1, 2, 3]
+     L2 = [1, 2, 3]
+     print(L1 is L2) #false
+
+     s1 = "ABCD"
+     s2 = "ABCD"
+     print(s1 is not s2) #false
+     ```
+
+   - **Membership Operators** - **in and in not** are membership operators. They are used to test weather a value or variable is found in a sequence (string, list, tuple, set or dictionary).
+
+     ```python
+     l = [1, 2, 3, 4]
+     print(1 in l) #true
+
+     d = {1: "a", 2: "b"}
+     print(2 in d) #true
+     ```
 
 ## Control Flow
 
@@ -354,7 +362,7 @@ while i < num:
         isDivisible = True
         print("{} is divisible by {}".format(num, i))
     i += 1;
-        
+
 if isDivisible:
     print("{} is not a Prime number".format(num))
 else:
@@ -369,7 +377,7 @@ itm = [10, 12, 13, 14, 15]
 product = 1
 for el in itm:
     product *= el
-    
+
 print("The product of all the items in the list is {}".format(product))
 
 # The product of all the items in the list is 327600
@@ -444,43 +452,49 @@ print("outside the for loop")
 
 ## List
 
-List is one of the sequence data-structure. List are the collection of items (Strings, integers or even other lists). List are enclosed in []. Each item in the list have assigned index. 
+List is one of the sequence data-structure. List are the collection of items (Strings, integers or even other lists). List are enclosed in []. Each item in the list have assigned index.
 
->Lists are mutable, which means they can be changed.
+> Lists are mutable, which means they can be changed.
 
 ### List Creation
+
 ```python
 emptyList = []
 lst = ['one', 'two', 'three'] # list of strings
 lst2 = [1, 2, 3, 4] # list of integers
 lst3 = [[1, 2], [3, 4]] #list of lists
-lst4 = [1, 'two', 3.45 ] #list of different data types 
+lst4 = [1, 'two', 3.45 ] #list of different data types
 ```
 
 ### List Length
+
 ```python
 len(lst)
 ```
 
 ### List Append
+
 ```python
 lst.append('four')
 # will add 'four' at the end of the list
 ```
 
 ### List Insert
+
 ```python
 lst.insert(2, "three")
 # will add 'three' at index 2
 ```
 
 ### List Remove
+
 ```python
 lst.remove('three')
 # will remove the first occurance of 'three' from the list
 ```
 
 ### List Append & Extend
+
 ```python
 lst = [1, 2, 3, 4]
 lst2 = [5, 6]
@@ -492,6 +506,7 @@ lst.extend(lst2) # [1, 2, 3, 4, 5, 6]
 ```
 
 ### List Delete
+
 ```python
 del lst[1] # removes the element at index 1
 
@@ -500,6 +515,7 @@ a = pop(1)
 ```
 
 ### List related keywords in Python
+
 ```python
 # keyword 'in' is used to test if an element is in a list
 lst = [1, 2, 3, 4]
@@ -512,6 +528,7 @@ if 4 not in lst:
 ```
 
 ### List Reverse
+
 ```python
 lst.reverse()
 ```
@@ -519,7 +536,8 @@ lst.reverse()
 ### List Sorting
 
 The easiest way to sort a List is to use sorted(list) function. That takes a list and returns a new list in sorted order. The original list is not changed.
->The sorted() optional argument, reverse=True, nakes it sort backwards
+
+> The sorted() optional argument, reverse=True, nakes it sort backwards
 
 ```python
 numbers = [3, 2, 5, 4, 1]
@@ -532,6 +550,7 @@ print(reverse_lst) # 5, 4, 3, 2, 1
 ```
 
 ### List having multiple reference
+
 ```python
 lst = [1, 2, 3, 4]
 abc = lst
@@ -541,12 +560,14 @@ print(lst) # 1, 2, 3, 4, 5
 ```
 
 ### String split to create a list
+
 ```python
 s = "Lets, learn, python"
 slst = s.split(',')
 print(slst) # ['Lets', 'learn', 'python']
 ```
->Default split is white-character: space or tab
+
+> Default split is white-character: space or tab
 
 ### List Indexing
 
@@ -561,7 +582,8 @@ last[-1] # 4
 
 ### List Slicing
 
->syntax - [start: end: step size]
+> syntax - [start: end: step size]
+
 ```python
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -577,6 +599,7 @@ numbers[::2] # [1, 3, 5, 7, 9]
 ```
 
 ### List extended using '+'
+
 ```python
 lst1 = [1, 2, 3]
 lst2 = ['four', 'five']
@@ -585,6 +608,7 @@ print(lst) # [1, 2, 3, 'four', 'five']
 ```
 
 ### List Count
+
 ```python
 #print frequency of element in the list
 numbers = [1, 2, 3, 1, 4, 1]
@@ -592,6 +616,7 @@ print(numbers.count(1)) # 3
 ```
 
 ### List Looping
+
 ```python
 lst = [1, 2, 3, 4]
 for ele in lst:
@@ -615,6 +640,7 @@ print(squares)
 ```
 
 ### Nested List Comprehensions
+
 ```python
 # transpose of a matrix without list comprehension
 matrix = [
@@ -629,7 +655,7 @@ for i in range(3):
     for row in matrix:
         lst.append(row[i])
     transpose.append(lst)
-    
+
 print(transpose)
 
 # with list comprehension
@@ -654,7 +680,9 @@ t = (1, "two", 3.5)
 # nested tuple
 t = (1, (2, 3, 4), [5, 6, 7])
 ```
->A comma is required at the end for creating a tuple. Also, paranthesis is optional for creating a tuple
+
+> A comma is required at the end for creating a tuple. Also, paranthesis is optional for creating a tuple
+
 ```python
 t = ("John")
 type(t) # str
@@ -693,11 +721,13 @@ print(tpl) # (1, 2, 3, 4, [5, 6, 'Seven'])
 ```
 
 ### Concatinating a tuple
+
 ```python
 tp1 = (1, 2) + (3, 4) # (1, 2, 3, 4)
 ```
 
 ### Repeat elements in a tuple for number of times
+
 ```python
 t = (('John', ) * 4)
 print(t) # ('John', 'John', 'John', 'John')
@@ -716,6 +746,7 @@ del t
 ### Tuple Count
 
 Returns the frequency of a particular element in the tuple.
+
 ```python
 t = (1, 2, 1, 2, 3, 5, 1)
 t.count(1) # 3
@@ -724,6 +755,7 @@ t.count(1) # 3
 ### Tuple Index
 
 Returns the index of the first matched element provided
+
 ```python
 t = (1, 2, 1, 2, 3, 5, 1)
 t.index(2) # 1
@@ -732,6 +764,7 @@ t.index(2) # 1
 ### Tuple Membership
 
 Test if an item exist in a tuple or not, using the keyword in.
+
 ```python
 t = (1, 2, 1, 2, 3, 5, 1)
 print(1 in t) # True
@@ -739,6 +772,7 @@ print(7 in t) # False
 ```
 
 ### Tuple Length
+
 ```python
 t = (1, 2, 1, 2, 3, 5, 1)
 len(t) # 7
@@ -747,6 +781,7 @@ len(t) # 7
 ### Tuple Sort
 
 Takes elements in the tuple and return a new sorted list.
+
 ```python
 t = (1, 2, 1, 2, 3, 5, 1)
 sort_t = sorted(t)
@@ -756,6 +791,7 @@ print(sort_t) # [1, 1, 1, 2, 2, 3, 5]
 ### Tuple max
 
 Gets the largest element in the tuple.
+
 ```python
 t = (1, 2, 1, 2, 3, 5, 1)
 print(max(t)) # 5
@@ -764,6 +800,7 @@ print(max(t)) # 5
 ### Tuple min
 
 Gets the smallest element in the tuple
+
 ```python
 t = (1, 2, 1, 2, 3, 5, 1)
 print(min(t)) # 1
@@ -772,6 +809,7 @@ print(min(t)) # 1
 ### Tuple Sum
 
 Returns the sum of elements in the tuple.
+
 ```python
 t = (1, 2, 1, 2, 3, 5, 1)
 print(sum(t)) # 15
@@ -782,6 +820,7 @@ print(sum(t)) # 15
 A set is an unordered collection of items. Every element is unique (no duplicates). It is mutable, so we can add or remove items from set. Sets can also be used to perform mathematical set operations like union, intersection, symmetric difference, etc.
 
 ### Set Creation
+
 ```python
 s = {1, 2, 3}
 
@@ -818,6 +857,7 @@ s.update([4, 5, 6]) # {1, 2, 3, 4, 5, 6}
 ### Remove element from set
 
 A particular item can be removed from sets using discard() and remove() method.
+
 ```python
 s = {1, 2, 3, 4, 5}
 
@@ -836,6 +876,7 @@ s.clear()
 ```
 
 ### Python Set Operations
+
 ```python
 s1 = {1, 2, 3, 4, 5}
 s2 = {2, 4, 6, 7, 8}
@@ -853,7 +894,8 @@ print(s1 & s2) # {2, 4}
 print(s1.intersection(s2))
 ```
 
->**Set Difference** - Set of elements that are only in s1 but not in s1
+> **Set Difference** - Set of elements that are only in s1 but not in s1
+
 ```python
 print(s1 - s2) # {1, 3, 5}
 
@@ -861,7 +903,8 @@ print(s1 - s2) # {1, 3, 5}
 print(s1.difference(s2))
 ```
 
->**Symmetric Difference** - Set of elements in both s1 and s2, except those that are common in both.
+> **Symmetric Difference** - Set of elements in both s1 and s2, except those that are common in both.
+
 ```python
 print(s1 ^ s2) # {1, 3, 5, 6, 7, 8}
 
@@ -879,7 +922,8 @@ print(y.issubset(x)) # False
 ### Frozen Sets
 
 Frozen sets are immutable sets. Theys are created using the function frozenset().
->Sets being mutable are unhashable, so they can't be used as a dictionary keys. Frozen sets are hashable, so they can be used as keys to a dictionary.
+
+> Sets being mutable are unhashable, so they can't be used as a dictionary keys. Frozen sets are hashable, so they can be used as keys to a dictionary.
 
 This datatype supports methods like copy(), difference(), intersection(), isdisjoint(), issubset(), issuperset(), symmetric_difference() and union().
 
@@ -966,32 +1010,32 @@ del my_dict
 ### Dictionary Methods
 
 1. **copy()** - Returns a copy of the dictionary.
-    ```python
-    copy_dict = my_dict.copy()
-    ```
+   ```python
+   copy_dict = my_dict.copy()
+   ```
 2. **fromkeys()** - Returns a dictionary with specified keys and value.
-    ```python
-    subjects = {}.fromkeys(['Math', 'English', 'Science'], 0)
-    print(subjects) # {'Math': 0, 'English': 0, 'Science': 0}
-    ```
+   ```python
+   subjects = {}.fromkeys(['Math', 'English', 'Science'], 0)
+   print(subjects) # {'Math': 0, 'English': 0, 'Science': 0}
+   ```
 3. **items()** - Returns a list containing a tuple for each key value pair.
-    ```python
-    subjects = {'Math': 0, 'English': 0, 'Science': 0}
-    print(subjects.items())
-    # dict_items([('Math', 0), ('English', 0), ('Science', 0)])
-    ```
+   ```python
+   subjects = {'Math': 0, 'English': 0, 'Science': 0}
+   print(subjects.items())
+   # dict_items([('Math', 0), ('English', 0), ('Science', 0)])
+   ```
 4. **keys()** - Returns a list containing the dictionary's keys.
-    ```python
-    subjects = {'Math': 0, 'English': 0, 'Science': 0}
-    print(subjects.keys())
-    # dict_keys(['Math', 'English', 'Science'])
-    ```
+   ```python
+   subjects = {'Math': 0, 'English': 0, 'Science': 0}
+   print(subjects.keys())
+   # dict_keys(['Math', 'English', 'Science'])
+   ```
 5. **values()** - Returns the list of all the values in the dictionary.
-    ```python
-    subjects = {'Math': 0, 'English': 0, 'Science': 0}
-    print(subjects.values())
-    # dict_values([0, 0, 0])
-    ```
+   ```python
+   subjects = {'Math': 0, 'English': 0, 'Science': 0}
+   print(subjects.values())
+   # dict_values([0, 0, 0])
+   ```
 
 ### Dictionary Comprehension
 
@@ -1058,61 +1102,64 @@ del mystring
 
 ### String Operations
 
-1. **Concatenation** - The '+' can be used to concatinate string. The '*' can be used to repeat the strings for a given number of times.
-    ```python
-    s1 = "Hello"
-    s2 = "World"
+1. **Concatenation** - The '+' can be used to concatinate string. The '\*' can be used to repeat the strings for a given number of times.
 
-    print(s1 + s2) # HelloWorld
+   ```python
+   s1 = "Hello"
+   s2 = "World"
 
-    print(s1 * 3) # HelloHelloHello
-    ```
+   print(s1 + s2) # HelloWorld
+
+   print(s1 * 3) # HelloHelloHello
+   ```
+
 2. **Iterating through string**
-    ```python
-    string = "Hello World"
-    count = 0
-    for l in string:
-        if l == 'o':
-            count += 1
-    print(count, 'o letters found') # 2 o letters found
-    ```
+   ```python
+   string = "Hello World"
+   count = 0
+   for l in string:
+       if l == 'o':
+           count += 1
+   print(count, 'o letters found') # 2 o letters found
+   ```
 3. **Membership Test**
-    ```python
-    print('l' in string) # True
-    ```
+   ```python
+   print('l' in string) # True
+   ```
 
 ### String Methods
 
 1. **lower()**
-    ```python
-    print(string.lower()) # hello world
-    ```
+   ```python
+   print(string.lower()) # hello world
+   ```
 2. **upper()**
-    ```python
-    print(string.upper()) # HELLO WORLD
-    ```
+   ```python
+   print(string.upper()) # HELLO WORLD
+   ```
 3. **join()**
-    ```python
-    print(string.split(' ')) # ['Hello', 'World']
-    ```
+   ```python
+   print(string.split(' ')) # ['Hello', 'World']
+   ```
 4. **split()**
-    ```python
-    print('-'.join(string)) # H-e-l-l-o- -W-o-r-l-d
-    ```
+   ```python
+   print('-'.join(string)) # H-e-l-l-o- -W-o-r-l-d
+   ```
 5. **find()**
-    ```python
-    print(string.find('lo')) # 3
-    ```
+   ```python
+   print(string.find('lo')) # 3
+   ```
 6. **replace()**
-    ```python
-    print(string.replace('World', 'Earth')) # Hello Earth
-    ```
+   ```python
+   print(string.replace('World', 'Earth')) # Hello Earth
+   ```
 
 ## Python Functions
 
 Function is a group of related statements that perform a specific task. It avoids repetition and makes code reusable.
 
 **Syntax**
+
 ```python
 # defining a function
 def print_name(name):
@@ -1125,6 +1172,7 @@ print_name("John") # This will print 'John'
 ### Return Statement
 
 Return statement is used to exit a function and go back to the place where it was called.
+
 1. return Statement can contain an expression which gets evaluated and the value is returned.
 2. if there is no expression in the statement or the return statement itself is not present inside a function, then the function will return None object.
 
@@ -1153,7 +1201,7 @@ def test_scope():
     local_var = "This is local variable"
     print(local_var)
     print(global_var)
-    
+
 test_scope()
 # This is local variable
 # This is global var
@@ -1171,88 +1219,100 @@ print(local_var) # NameError: name 'local_var' is not defined
 ### Built-in Functions
 
 - **abs()** - Find the absolute value
-    ```python
-    num = -100
-    print(abs(num)) # 100
-    ```
+  ```python
+  num = -100
+  print(abs(num)) # 100
+  ```
 - **all()** - This will return 'True' if all the elements in the iterable are true, else will return 'False' if any of the element in the iterable is false.
-    ```python
-    lst = [1, 2, 3, 4]
-    lst2 = [0, 1, 2]
-    lst = []
 
-    print(all(lst)) # True
-    print(all(lst2)) # False
-    print(all(lst3)) # True, empty list are always true
-    ```
+  ```python
+  lst = [1, 2, 3, 4]
+  lst2 = [0, 1, 2]
+  lst = []
+
+  print(all(lst)) # True
+  print(all(lst2)) # False
+  print(all(lst3)) # True, empty list are always true
+  ```
+
 - **dir()** - Returns the list of valid attributes of the object.
-    ```python
-    numbers = [1, 2]
-    print(dir(numbers))
-    # ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
-    ```
+  ```python
+  numbers = [1, 2]
+  print(dir(numbers))
+  # ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+  ```
 - **divmod()** - Takes two numbers and returns a pair of numbers(tuple) consisting of their quotient and remainder.
-    ```python
-    print(divmod(9, 2)) # (4, 1)
-    ```
+  ```python
+  print(divmod(9, 2)) # (4, 1)
+  ```
 - **enumerate()** - Adds counter to an iterable and returns it.
-    ```python
-    numbers = [1, 2, 3, 4]
-    for index, num in enumerate(numbers):
-        print("index {0} has value {1}".format(index, num))
 
-    # index 0 has value 1
-    # index 1 has value 2
-    # index 2 has value 3
-    # index 3 has value 4
-    ```
+  ```python
+  numbers = [1, 2, 3, 4]
+  for index, num in enumerate(numbers):
+      print("index {0} has value {1}".format(index, num))
+
+  # index 0 has value 1
+  # index 1 has value 2
+  # index 2 has value 3
+  # index 3 has value 4
+  ```
+
 - **filter()** - Constructs an iterator from elements of an iterable for which a function return true.
-    ```python
-    def print_positive_numbers(num):
-    if(num > 0):
-        return num
-    
-    numbers_list = range(-10, 10)
 
-    positive_numbers = list(filter(print_positive_numbers, numbers_list))
-    print(positive_numbers)
-    # [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    ```
+  ```python
+  def print_positive_numbers(num):
+  if(num > 0):
+      return num
+
+  numbers_list = range(-10, 10)
+
+  positive_numbers = list(filter(print_positive_numbers, numbers_list))
+  print(positive_numbers)
+  # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  ```
+
 - **isinstance()** - Checks if the object (first argument) is an instance or subclass of classinfo class (second argument).
-    ```python
-    lst = [1, 2, 3, 4]
-    print(isinstance(lst, list)) # True
 
-    lst = (1, 2, 3)
-    print(isinstance(lst, list)) # False, as lst is a tuple
-    ```
+  ```python
+  lst = [1, 2, 3, 4]
+  print(isinstance(lst, list)) # True
+
+  lst = (1, 2, 3)
+  print(isinstance(lst, list)) # False, as lst is a tuple
+  ```
+
 - **map()** - Applies a function to all the element in a list.
-    ```python
-    numbers = [1, 2, 3, 4]
 
-    def num_square(num):
-        return num**2
+  ```python
+  numbers = [1, 2, 3, 4]
 
-    squares = list(map(num_square, numbers))
-    print(squares) # [1, 4, 9, 16]
-    ```
+  def num_square(num):
+      return num**2
+
+  squares = list(map(num_square, numbers))
+  print(squares) # [1, 4, 9, 16]
+  ```
+
 - **reduce()** - Performs some computation on a list and returns the result.
-    ```python
-    from functools import reduce
 
-    numbers = [1, 2, 3, 4]
-    def multiply(x, y):
-        return x*y
+  ```python
+  from functools import reduce
 
-    product = reduce(multiply, numbers)
-    print(product) # 24
-    ```
+  numbers = [1, 2, 3, 4]
+  def multiply(x, y):
+      return x*y
+
+  product = reduce(multiply, numbers)
+  print(product) # 24
+  ```
 
 ### User Defined Functions
 
 Functions that we define ourselves to do a specific task are referred as user-defined functions. If we use functions written by others in the form of library, it can be termed as library functions.
 
 **Advantages**
+
 1. It helps to decompose a large program into small segments which make program easy to understand, maintain and debug.
 2. If repeated code occurs in a program, function can be used to include those codes and execute when needed by calling that function.
 3. Programmers working on large project can divide the workload by making different functions.
@@ -1271,39 +1331,46 @@ def greet(name, message):
 ### Different forms of Arguments
 
 1. **Default Arguments** - We can provide a default value to an argument by using the assignment operator (=)
-    ```python
-    def greet(name, message="Good Morning"):
-        print("Hello {0}, {1}".format(name, message))
 
-    greet("John"); # Hello John, Good Morning
-    greet("John", "Good Night") # Hello John, Good Night
-    ```
-    >Once we have a default argument, all the arguments to its right must also have default values
-    ```python
-    def greet(message="Good Morning", name):
-        print("Hello {0}, {1}".format(name, message))
+   ```python
+   def greet(name, message="Good Morning"):
+       print("Hello {0}, {1}".format(name, message))
 
-    greet("John") # SyntaxError
-    ```
+   greet("John"); # Hello John, Good Morning
+   greet("John", "Good Night") # Hello John, Good Night
+   ```
+
+   > Once we have a default argument, all the arguments to its right must also have default values
+
+   ```python
+   def greet(message="Good Morning", name):
+       print("Hello {0}, {1}".format(name, message))
+
+   greet("John") # SyntaxError
+   ```
+
 2. **Keyword Arguments** - kwargs allow you to pass keyworded variable length of arguments to a function.
-    ```python
-    def greet(**kwargs):
-        if kwargs:
-          print("Hello {0}, {1}".format(name, message))
 
-    greet(name="John", msg="Good Day") # Hello John, Good Day  
-    ```
+   ```python
+   def greet(**kwargs):
+       if kwargs:
+         print("Hello {0}, {1}".format(name, message))
+
+   greet(name="John", msg="Good Day") # Hello John, Good Day
+   ```
+
 3. **Arbitrary Arguments** - Sometimes, we don't know in advance the number of arguments that will be passed into a function. This kind of situation can be handled using arbitrary arguments.
-    ```python
-    def greet(*names):
-        for name in names:
-            print("Hello {0}".format(name))
 
-    greet("John", "Jane", "Joe")
-    # Hello John
-    # Hello Jane
-    # Hello Joe
-    ```
+   ```python
+   def greet(*names):
+       for name in names:
+           print("Hello {0}".format(name))
+
+   greet("John", "Jane", "Joe")
+   # Hello John
+   # Hello Jane
+   # Hello Joe
+   ```
 
 ## Recursion
 
@@ -1359,6 +1426,7 @@ Modules refer to a file containing Python statements and definitions. We use mod
 ### Importing a Module
 
 We use import keyword to import a module.
+
 ```python
 import math
 print(math.pi) # 3.141592653589793
@@ -1377,12 +1445,14 @@ print(m.pi)
 ### from...import statement
 
 We can import specific names from a module without importing the module as a whole.
+
 ```python
 from datetime import datetime
 datetime.now()
 ```
 
 ### import all names
+
 ```python
 from math import *
 print(pi)
@@ -1435,7 +1505,7 @@ f = open('example.txt')
 f.close()
 ```
 
->If an exeception occurs when we are performing some operation with the file, the code exits without closing the file. So, try...finally block can be used to avoid this situation.
+> If an exeception occurs when we are performing some operation with the file, the code exits without closing the file. So, try...finally block can be used to avoid this situation.
 
 ```python
 try:
@@ -1478,6 +1548,7 @@ f.seek(0) # brings the file cursor to initial position
 ```
 
 > We can read a file line-by-line using a for loop.
+
 ```python
 f.seek(0)
 for line in f:
@@ -1485,12 +1556,13 @@ for line in f:
 ```
 
 > We can also use readline() method to read individual lines of a file. This method reads a file till the newline, including the newline character
+
 ```python
 f = open('example.txt', 'r')
 f.readline()
 ```
 
->The **readlines()** method returns a list of remaining lines of the entire file. All these reading method return empty value when end of the file (EOF) is reached.
+> The **readlines()** method returns a list of remaining lines of the entire file. All these reading method return empty value when end of the file (EOF) is reached.
 
 ```python
 f.readlines() # Retirns each lines in a list
@@ -1513,6 +1585,7 @@ os.remove("sample.txt")
 **Get Current Directory**
 
 We can get the present working directory using the getcwd() method. This methods returns the current working directory in the form of string.
+
 ```python
 import os
 os.getcwd()
@@ -1529,6 +1602,7 @@ os.chdir("Users/sample/")
 **List Directories and Files**
 
 All files and subdirectories inside a directory can be listed using the listdir() method
+
 ```python
 os.listdir(os.getcwd())
 ```
@@ -1536,6 +1610,7 @@ os.listdir(os.getcwd())
 **Making a new Directory**
 
 We can make a new directory with mkdir() method.
+
 ```python
 os.mkdir("newdir")
 ```
@@ -1603,3 +1678,70 @@ try:
 finally:
     f.close()
 ```
+
+## Debugging
+
+**pdb** implements an interactive debugging environment for python programs. It includes features to let you pause your program, look at the values of variables, and watch program execution step-by-step so you can understand what your program actually does and find bugs in the logic.
+
+```python
+import pdb
+
+def seq(n):
+    for in in range(n):
+        pdb.set_trace()
+        print(i)
+    return
+
+seq(5)
+```
+
+## Python Built in Functions
+
+1. **map()** - The map() function executes a specific function for each item in a iterable. The item is sent to the function as a parameter.
+
+   ```python
+   def multiply_by_2(item):
+       return item*2
+
+   print(list(map(multiply_by_2, [2, 4, 5])))
+   # prints [4, 8, 10]
+   ```
+
+2. **filter()** - The filter() function returns an iterator where the items are filtered through a function to test if the item is accepted or not.
+
+   ```python
+   def check_even(item):
+       if item % 2 == 0:
+           return True
+       else:
+           return False
+
+   print(list(filter(check_even, [1, 2, 4, 6, 7, 9])))
+   # prints [2, 4, 6]
+   ```
+
+3. **zip()** - The zip() function returns an iterator of tuples where the first item in each passed iterator is paired together, and then the second one, etc.
+
+   ```python
+   id_list = [1, 2, 3]
+   user_list = ['John', 'Mac', 'Jane']
+   print(list(zip(id_list, user_list)))
+   # prints [(1, 'John'), (2, 'Mac'), (3, 'Jane')]
+   ```
+
+4. **reduce()** - The reduce() function accepts a function and a sequence and returns a single value calculated as follows:
+
+   a. initially the function is called with the first two items in the sequence and the result is returned.
+
+   b. The function is then called again with the result obtained in step 1 and the next value in sequence. This process is repeated until there are items in the sequence.
+
+   ```python
+   def add_numbers(item1, item2):
+       return item1+item2
+
+   print(reduce(add_numbers, [2, 4, 6, 8]))
+   # prints 20
+
+   print(reduce(add_numbers, [2, 4, 6, 8]), 4)
+   # prints 24
+   ```
