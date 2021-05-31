@@ -223,57 +223,76 @@ Operators are special symbols in python that can carry out arithmetic and logica
 ### Operator Types
 
 1. **Arithmetic**
-   ```python
-   #addition (+)
-   #subtraction (-)
-   #multiplication (*)
-   #division (/)
-   #modulo division (%)
-   #Floor Division (//)
-   #Exponent (**)
-   ```
+    ```python
+    #addition (+)
+    #subtraction (-)
+    #multiplication (*)
+    #division (/)
+    #modulo division (%)
+    #Floor Division (//)
+    #Exponent (**)
+    ```
 2. **Comparison**
-   > <, >, ==, !=, >=, <=
+    > <, >, ==, !=, >=, <=
 3. **Logical (Boolean)**
-   > and, or and not
+    > and, or and not
 4. **Bitwise**
-   > &, |, ~, ^, >>, <<
+    > &, |, ~, ^, >>, <<
 5. **Assignment**
-   ```python
-   #Add AND (+=)
-   #subtract AND (-=)
-   #Multiply AND (*=)
-   #Divide AND (/=)
-   #Modulus AND (%=)
-   #Floor division AND (//=)
-   #Exponent AND (*=)
-   ```
+    ```python
+    #Add AND (+=)
+    #subtract AND (-=)
+    #Multiply AND (*=)
+    #Divide AND (/=)
+    #Modulus AND (%=)
+    #Floor division AND (//=)
+    #Exponent AND (*=)
+    ```
 6. **Special**
 
-   - **Identity Operator** - **is and is not** are identity operators. They are used to check if two values are located on the same part of the memory.
+    - **Identity Operator** - **is and is not** are identity operators. They are used to check if two values are located on the same part of the memory.
 
-     ```python
-     a = 5; b = 5
-     print(a is b) #true
+        ```python
+        a = 5; b = 5
+        print(a is b) #true
 
-     L1 = [1, 2, 3]
-     L2 = [1, 2, 3]
-     print(L1 is L2) #false
+        L1 = [1, 2, 3]
+        L2 = [1, 2, 3]
+        print(L1 is L2) #false
 
-     s1 = "ABCD"
-     s2 = "ABCD"
-     print(s1 is not s2) #false
-     ```
+        s1 = "ABCD"
+        s2 = "ABCD"
+        print(s1 is not s2) #false
+        ```
 
-   - **Membership Operators** - **in and in not** are membership operators. They are used to test weather a value or variable is found in a sequence (string, list, tuple, set or dictionary).
+    - **Membership Operators** - **in and in not** are membership operators. They are used to test weather a value or variable is found in a sequence (string, list, tuple, set or dictionary).
 
-     ```python
-     l = [1, 2, 3, 4]
-     print(1 in l) #true
+        ```python
+        l = [1, 2, 3, 4]
+        print(1 in l) #true
 
-     d = {1: "a", 2: "b"}
-     print(2 in d) #true
-     ```
+        d = {1: "a", 2: "b"}
+        print(2 in d) #true
+        ```
+
+### Ternary Operators
+
+Ternary operators, also known as conditional expressions are operators that evaluate something based on a condition being true or false.
+It allows to test a condition in a **single line** instead of writing multiline if-else
+
+Syntax:
+
+```python
+[condition_true] if [condition] else [condition_false]
+```
+
+Example:
+
+```python
+age = 18
+can_vote = True if age >= 18 else False
+print(can_vote)  # True
+```
 
 ## Control Flow
 
@@ -1010,32 +1029,32 @@ del my_dict
 ### Dictionary Methods
 
 1. **copy()** - Returns a copy of the dictionary.
-   ```python
-   copy_dict = my_dict.copy()
-   ```
+    ```python
+    copy_dict = my_dict.copy()
+    ```
 2. **fromkeys()** - Returns a dictionary with specified keys and value.
-   ```python
-   subjects = {}.fromkeys(['Math', 'English', 'Science'], 0)
-   print(subjects) # {'Math': 0, 'English': 0, 'Science': 0}
-   ```
+    ```python
+    subjects = {}.fromkeys(['Math', 'English', 'Science'], 0)
+    print(subjects) # {'Math': 0, 'English': 0, 'Science': 0}
+    ```
 3. **items()** - Returns a list containing a tuple for each key value pair.
-   ```python
-   subjects = {'Math': 0, 'English': 0, 'Science': 0}
-   print(subjects.items())
-   # dict_items([('Math', 0), ('English', 0), ('Science', 0)])
-   ```
+    ```python
+    subjects = {'Math': 0, 'English': 0, 'Science': 0}
+    print(subjects.items())
+    # dict_items([('Math', 0), ('English', 0), ('Science', 0)])
+    ```
 4. **keys()** - Returns a list containing the dictionary's keys.
-   ```python
-   subjects = {'Math': 0, 'English': 0, 'Science': 0}
-   print(subjects.keys())
-   # dict_keys(['Math', 'English', 'Science'])
-   ```
+    ```python
+    subjects = {'Math': 0, 'English': 0, 'Science': 0}
+    print(subjects.keys())
+    # dict_keys(['Math', 'English', 'Science'])
+    ```
 5. **values()** - Returns the list of all the values in the dictionary.
-   ```python
-   subjects = {'Math': 0, 'English': 0, 'Science': 0}
-   print(subjects.values())
-   # dict_values([0, 0, 0])
-   ```
+    ```python
+    subjects = {'Math': 0, 'English': 0, 'Science': 0}
+    print(subjects.values())
+    # dict_values([0, 0, 0])
+    ```
 
 ### Dictionary Comprehension
 
@@ -1104,55 +1123,55 @@ del mystring
 
 1. **Concatenation** - The '+' can be used to concatinate string. The '\*' can be used to repeat the strings for a given number of times.
 
-   ```python
-   s1 = "Hello"
-   s2 = "World"
+    ```python
+    s1 = "Hello"
+    s2 = "World"
 
-   print(s1 + s2) # HelloWorld
+    print(s1 + s2) # HelloWorld
 
-   print(s1 * 3) # HelloHelloHello
-   ```
+    print(s1 * 3) # HelloHelloHello
+    ```
 
 2. **Iterating through string**
-   ```python
-   string = "Hello World"
-   count = 0
-   for l in string:
-       if l == 'o':
-           count += 1
-   print(count, 'o letters found') # 2 o letters found
-   ```
+    ```python
+    string = "Hello World"
+    count = 0
+    for l in string:
+        if l == 'o':
+            count += 1
+    print(count, 'o letters found') # 2 o letters found
+    ```
 3. **Membership Test**
-   ```python
-   print('l' in string) # True
-   ```
+    ```python
+    print('l' in string) # True
+    ```
 
 ### String Methods
 
 1. **lower()**
-   ```python
-   print(string.lower()) # hello world
-   ```
+    ```python
+    print(string.lower()) # hello world
+    ```
 2. **upper()**
-   ```python
-   print(string.upper()) # HELLO WORLD
-   ```
+    ```python
+    print(string.upper()) # HELLO WORLD
+    ```
 3. **join()**
-   ```python
-   print(string.split(' ')) # ['Hello', 'World']
-   ```
+    ```python
+    print(string.split(' ')) # ['Hello', 'World']
+    ```
 4. **split()**
-   ```python
-   print('-'.join(string)) # H-e-l-l-o- -W-o-r-l-d
-   ```
+    ```python
+    print('-'.join(string)) # H-e-l-l-o- -W-o-r-l-d
+    ```
 5. **find()**
-   ```python
-   print(string.find('lo')) # 3
-   ```
+    ```python
+    print(string.find('lo')) # 3
+    ```
 6. **replace()**
-   ```python
-   print(string.replace('World', 'Earth')) # Hello Earth
-   ```
+    ```python
+    print(string.replace('World', 'Earth')) # Hello Earth
+    ```
 
 ## Python Functions
 
@@ -1189,11 +1208,11 @@ print(s) # 10
 
 ### Scope and Life Time of Variables
 
-- Scope of a variable is the portion of a program where the variable is recognized.
-- Variable defined inside a function is not visible from outside. Hence, they have a local scope.
-- Lifetime of a variable is the period throughout which the varibale exists in the memory.
-- The lifetime of a variable inside a function is as long as the function executes.
-- Variables are destroyed once we return from the function.
+-   Scope of a variable is the portion of a program where the variable is recognized.
+-   Variable defined inside a function is not visible from outside. Hence, they have a local scope.
+-   Lifetime of a variable is the period throughout which the varibale exists in the memory.
+-   The lifetime of a variable inside a function is as long as the function executes.
+-   Variables are destroyed once we return from the function.
 
 ```python
 global_var = "This is global var"
@@ -1218,94 +1237,94 @@ print(local_var) # NameError: name 'local_var' is not defined
 
 ### Built-in Functions
 
-- **abs()** - Find the absolute value
-  ```python
-  num = -100
-  print(abs(num)) # 100
-  ```
-- **all()** - This will return 'True' if all the elements in the iterable are true, else will return 'False' if any of the element in the iterable is false.
+-   **abs()** - Find the absolute value
+    ```python
+    num = -100
+    print(abs(num)) # 100
+    ```
+-   **all()** - This will return 'True' if all the elements in the iterable are true, else will return 'False' if any of the element in the iterable is false.
 
-  ```python
-  lst = [1, 2, 3, 4]
-  lst2 = [0, 1, 2]
-  lst = []
+    ```python
+    lst = [1, 2, 3, 4]
+    lst2 = [0, 1, 2]
+    lst = []
 
-  print(all(lst)) # True
-  print(all(lst2)) # False
-  print(all(lst3)) # True, empty list are always true
-  ```
+    print(all(lst)) # True
+    print(all(lst2)) # False
+    print(all(lst3)) # True, empty list are always true
+    ```
 
-- **dir()** - Returns the list of valid attributes of the object.
-  ```python
-  numbers = [1, 2]
-  print(dir(numbers))
-  # ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
-  ```
-- **divmod()** - Takes two numbers and returns a pair of numbers(tuple) consisting of their quotient and remainder.
-  ```python
-  print(divmod(9, 2)) # (4, 1)
-  ```
-- **enumerate()** - Adds counter to an iterable and returns it.
+-   **dir()** - Returns the list of valid attributes of the object.
+    ```python
+    numbers = [1, 2]
+    print(dir(numbers))
+    # ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+    ```
+-   **divmod()** - Takes two numbers and returns a pair of numbers(tuple) consisting of their quotient and remainder.
+    ```python
+    print(divmod(9, 2)) # (4, 1)
+    ```
+-   **enumerate()** - Adds counter to an iterable and returns it.
 
-  ```python
-  numbers = [1, 2, 3, 4]
-  for index, num in enumerate(numbers):
-      print("index {0} has value {1}".format(index, num))
+    ```python
+    numbers = [1, 2, 3, 4]
+    for index, num in enumerate(numbers):
+        print("index {0} has value {1}".format(index, num))
 
-  # index 0 has value 1
-  # index 1 has value 2
-  # index 2 has value 3
-  # index 3 has value 4
-  ```
+    # index 0 has value 1
+    # index 1 has value 2
+    # index 2 has value 3
+    # index 3 has value 4
+    ```
 
-- **filter()** - Constructs an iterator from elements of an iterable for which a function return true.
+-   **filter()** - Constructs an iterator from elements of an iterable for which a function return true.
 
-  ```python
-  def print_positive_numbers(num):
-  if(num > 0):
-      return num
+    ```python
+    def print_positive_numbers(num):
+    if(num > 0):
+        return num
 
-  numbers_list = range(-10, 10)
+    numbers_list = range(-10, 10)
 
-  positive_numbers = list(filter(print_positive_numbers, numbers_list))
-  print(positive_numbers)
-  # [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  ```
+    positive_numbers = list(filter(print_positive_numbers, numbers_list))
+    print(positive_numbers)
+    # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    ```
 
-- **isinstance()** - Checks if the object (first argument) is an instance or subclass of classinfo class (second argument).
+-   **isinstance()** - Checks if the object (first argument) is an instance or subclass of classinfo class (second argument).
 
-  ```python
-  lst = [1, 2, 3, 4]
-  print(isinstance(lst, list)) # True
+    ```python
+    lst = [1, 2, 3, 4]
+    print(isinstance(lst, list)) # True
 
-  lst = (1, 2, 3)
-  print(isinstance(lst, list)) # False, as lst is a tuple
-  ```
+    lst = (1, 2, 3)
+    print(isinstance(lst, list)) # False, as lst is a tuple
+    ```
 
-- **map()** - Applies a function to all the element in a list.
+-   **map()** - Applies a function to all the element in a list.
 
-  ```python
-  numbers = [1, 2, 3, 4]
+    ```python
+    numbers = [1, 2, 3, 4]
 
-  def num_square(num):
-      return num**2
+    def num_square(num):
+        return num**2
 
-  squares = list(map(num_square, numbers))
-  print(squares) # [1, 4, 9, 16]
-  ```
+    squares = list(map(num_square, numbers))
+    print(squares) # [1, 4, 9, 16]
+    ```
 
-- **reduce()** - Performs some computation on a list and returns the result.
+-   **reduce()** - Performs some computation on a list and returns the result.
 
-  ```python
-  from functools import reduce
+    ```python
+    from functools import reduce
 
-  numbers = [1, 2, 3, 4]
-  def multiply(x, y):
-      return x*y
+    numbers = [1, 2, 3, 4]
+    def multiply(x, y):
+        return x*y
 
-  product = reduce(multiply, numbers)
-  print(product) # 24
-  ```
+    product = reduce(multiply, numbers)
+    print(product) # 24
+    ```
 
 ### User Defined Functions
 
@@ -1332,45 +1351,45 @@ def greet(name, message):
 
 1. **Default Arguments** - We can provide a default value to an argument by using the assignment operator (=)
 
-   ```python
-   def greet(name, message="Good Morning"):
-       print("Hello {0}, {1}".format(name, message))
+    ```python
+    def greet(name, message="Good Morning"):
+        print("Hello {0}, {1}".format(name, message))
 
-   greet("John"); # Hello John, Good Morning
-   greet("John", "Good Night") # Hello John, Good Night
-   ```
+    greet("John"); # Hello John, Good Morning
+    greet("John", "Good Night") # Hello John, Good Night
+    ```
 
-   > Once we have a default argument, all the arguments to its right must also have default values
+    > Once we have a default argument, all the arguments to its right must also have default values
 
-   ```python
-   def greet(message="Good Morning", name):
-       print("Hello {0}, {1}".format(name, message))
+    ```python
+    def greet(message="Good Morning", name):
+        print("Hello {0}, {1}".format(name, message))
 
-   greet("John") # SyntaxError
-   ```
+    greet("John") # SyntaxError
+    ```
 
 2. **Keyword Arguments** - kwargs allow you to pass keyworded variable length of arguments to a function.
 
-   ```python
-   def greet(**kwargs):
-       if kwargs:
-         print("Hello {0}, {1}".format(name, message))
+    ```python
+    def greet(**kwargs):
+        if kwargs:
+          print("Hello {0}, {1}".format(name, message))
 
-   greet(name="John", msg="Good Day") # Hello John, Good Day
-   ```
+    greet(name="John", msg="Good Day") # Hello John, Good Day
+    ```
 
 3. **Arbitrary Arguments** - Sometimes, we don't know in advance the number of arguments that will be passed into a function. This kind of situation can be handled using arbitrary arguments.
 
-   ```python
-   def greet(*names):
-       for name in names:
-           print("Hello {0}".format(name))
+    ```python
+    def greet(*names):
+        for name in names:
+            print("Hello {0}".format(name))
 
-   greet("John", "Jane", "Joe")
-   # Hello John
-   # Hello Jane
-   # Hello Joe
-   ```
+    greet("John", "Jane", "Joe")
+    # Hello John
+    # Hello Jane
+    # Hello Joe
+    ```
 
 ## Recursion
 
@@ -1481,13 +1500,13 @@ f = open('example.txt') # opens the file in current directory
 
 **Python File Modes**
 
-- 'r' - Open a file for reading (default)
-- 'w' - Open a file for writing. Creates a new file if it does not exist or truncates the file if it exists.
-- 'x' - Open a file for exclusive creation. If the file already exists, the operation fails.
-- 'a' - Open for appending at the end of the file without truncating it. Creates a new file if it does not exist.
-- 't' - Open in text mode (default)
-- 'b' - Open in binary mode.
-- '+' - Open a file for updating (reading and writing).
+-   'r' - Open a file for reading (default)
+-   'w' - Open a file for writing. Creates a new file if it does not exist or truncates the file if it exists.
+-   'x' - Open a file for exclusive creation. If the file already exists, the operation fails.
+-   'a' - Open for appending at the end of the file without truncating it. Creates a new file if it does not exist.
+-   't' - Open in text mode (default)
+-   'b' - Open in binary mode.
+-   '+' - Open a file for updating (reading and writing).
 
 ```python
 f = open('example.txt', 'r')
@@ -1699,49 +1718,49 @@ seq(5)
 
 1. **map()** - The map() function executes a specific function for each item in a iterable. The item is sent to the function as a parameter.
 
-   ```python
-   def multiply_by_2(item):
-       return item*2
+    ```python
+    def multiply_by_2(item):
+        return item*2
 
-   print(list(map(multiply_by_2, [2, 4, 5])))
-   # prints [4, 8, 10]
-   ```
+    print(list(map(multiply_by_2, [2, 4, 5])))
+    # prints [4, 8, 10]
+    ```
 
 2. **filter()** - The filter() function returns an iterator where the items are filtered through a function to test if the item is accepted or not.
 
-   ```python
-   def check_even(item):
-       if item % 2 == 0:
-           return True
-       else:
-           return False
+    ```python
+    def check_even(item):
+        if item % 2 == 0:
+            return True
+        else:
+            return False
 
-   print(list(filter(check_even, [1, 2, 4, 6, 7, 9])))
-   # prints [2, 4, 6]
-   ```
+    print(list(filter(check_even, [1, 2, 4, 6, 7, 9])))
+    # prints [2, 4, 6]
+    ```
 
 3. **zip()** - The zip() function returns an iterator of tuples where the first item in each passed iterator is paired together, and then the second one, etc.
 
-   ```python
-   id_list = [1, 2, 3]
-   user_list = ['John', 'Mac', 'Jane']
-   print(list(zip(id_list, user_list)))
-   # prints [(1, 'John'), (2, 'Mac'), (3, 'Jane')]
-   ```
+    ```python
+    id_list = [1, 2, 3]
+    user_list = ['John', 'Mac', 'Jane']
+    print(list(zip(id_list, user_list)))
+    # prints [(1, 'John'), (2, 'Mac'), (3, 'Jane')]
+    ```
 
 4. **reduce()** - The reduce() function accepts a function and a sequence and returns a single value calculated as follows:
 
-   a. initially the function is called with the first two items in the sequence and the result is returned.
+    a. initially the function is called with the first two items in the sequence and the result is returned.
 
-   b. The function is then called again with the result obtained in step 1 and the next value in sequence. This process is repeated until there are items in the sequence.
+    b. The function is then called again with the result obtained in step 1 and the next value in sequence. This process is repeated until there are items in the sequence.
 
-   ```python
-   def add_numbers(item1, item2):
-       return item1+item2
+    ```python
+    def add_numbers(item1, item2):
+        return item1+item2
 
-   print(reduce(add_numbers, [2, 4, 6, 8]))
-   # prints 20
+    print(reduce(add_numbers, [2, 4, 6, 8]))
+    # prints 20
 
-   print(reduce(add_numbers, [2, 4, 6, 8]), 4)
-   # prints 24
-   ```
+    print(reduce(add_numbers, [2, 4, 6, 8]), 4)
+    # prints 24
+    ```
