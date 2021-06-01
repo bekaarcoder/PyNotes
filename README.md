@@ -292,6 +292,10 @@ Example:
 age = 18
 can_vote = True if age >= 18 else False
 print(can_vote)  # True
+
+# Writing nested if-else
+a, b = 10, 20
+print("Both a and b are equal" if a == b else "a is greater than b" if a > b else "b is greater than a")
 ```
 
 ## Control Flow
@@ -1158,11 +1162,11 @@ del mystring
     ```
 3. **join()**
     ```python
-    print(string.split(' ')) # ['Hello', 'World']
+    print('-'.join(string)) # H-e-l-l-o- -W-o-r-l-d
     ```
 4. **split()**
     ```python
-    print('-'.join(string)) # H-e-l-l-o- -W-o-r-l-d
+    print(string.split(' ')) # ['Hello', 'World']
     ```
 5. **find()**
     ```python
@@ -1171,6 +1175,18 @@ del mystring
 6. **replace()**
     ```python
     print(string.replace('World', 'Earth')) # Hello Earth
+    ```
+7. **strip()**
+    ```python
+    rand_string = "      This has whitespace    "
+    print(rand_string.strip()) # Removes whitespace from the string
+    print(rand_string.lstrip()) # Removes whitespace from the left
+    print(rand_string.rstrip()) # Removes whitespace from the right
+    ```
+8. **capitalize()**
+    ```python
+    rand_string = "this is a string"
+    print(rand_string.capitalize()) # This is a string
     ```
 
 ## Python Functions
@@ -1390,6 +1406,43 @@ def greet(name, message):
     # Hello Jane
     # Hello Joe
     ```
+
+## Python Main Function
+
+There is no main() function in python. Python interpreter runs the code right from the first line.
+
+### `__name__`
+
+`__name__` is a special variable in python.
+If the source file is executed as the main program, the interpreter sets the value of `__name__` to `__main__`.
+if the file is being imported from the another module, the value of `__name__` is set to the module name.
+
+Example:-
+
+```python
+# addNumber.py
+def add_num(a, b):
+    return a+b
+
+print(__name__)
+if __name__ == "__main__":
+    print(add(10, 20))
+
+# Output
+__main__
+30
+```
+
+```python
+# test.py
+import addNumber
+
+print(addNumber.add(5, 5))
+
+# Output
+addNumber
+10
+```
 
 ## Recursion
 

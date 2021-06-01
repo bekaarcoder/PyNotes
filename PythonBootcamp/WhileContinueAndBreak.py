@@ -27,3 +27,15 @@ while tree_height != 0:
 for i in range(stump_spaces):
     print(" ", end="")
 print("#")
+
+# Guessing Game
+
+secret_num = 7
+while True:
+    try:
+        guess = int(input("Guess the number: "))
+        if guess == secret_num:
+            print("You guessed it!")
+            break
+    except ValueError:
+        print("Please enter a number.")
