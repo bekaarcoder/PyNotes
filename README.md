@@ -516,6 +516,21 @@ lst.remove('three')
 # will remove the first occurance of 'three' from the list
 ```
 
+### List Pop
+
+The pop() method return the item present at the given index. This same item is also removed from the list.
+
+```python
+languages = ['Python', 'Java', 'C++', 'French', 'C']
+
+# remove and return the 4th item
+return_value = languages.pop(3)
+print(return_value) # French
+
+# Updated List
+print(languages) # ['Python', 'Java', 'C++', 'C']
+```
+
 ### List Append & Extend
 
 ```python
@@ -1637,7 +1652,7 @@ f.readline()
 > The **readlines()** method returns a list of remaining lines of the entire file. All these reading method return empty value when end of the file (EOF) is reached.
 
 ```python
-f.readlines() # Retirns each lines in a list
+f.readlines() # Returns each lines in a list
 ```
 
 ### Renaming and Deleting a File
@@ -1650,6 +1665,21 @@ import os
 os.rename("test.txt", "renamed.txt")
 
 os.remove("sample.txt")
+```
+
+### with Statement
+
+`with` statement in python is used in exception handling to make the code clearer and readable.
+There is no need to call `file.close()` when using `with`. The `with` statement itself ensures proper acquisition and release of resources.
+
+```python
+import os
+
+with open("data.txt", mode="w", encoding="utf-8") as my_file:
+    my_file.write("Some random text")
+
+with open("data.txt", encoding="utf-8) as my_file:
+    my_file.read()
 ```
 
 ### Python Directory and File Management
