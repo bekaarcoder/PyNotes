@@ -1847,3 +1847,102 @@ seq(5)
     print(reduce(add_numbers, [2, 4, 6, 8]), 4)
     # prints 24
     ```
+
+## Classes and Objects
+
+### Class
+
+A class is a user-defined blueprint from which objects are created.
+Class creates a user-defined data structure, which holds its own data members and member functions, which can be accessed and used by creating an instance of that class.
+
+### Object
+
+An object is an instance of a class.
+Its a copy of the class with the actual values.
+An object consists of:-
+
+1. **State** - Attributes/Properties of the object.
+2. **Behavior** - Methods of the object.
+3. **Identity** - Unique name of the object
+
+For example:-
+
+| Identity        | State/Attributes | Behavior       |
+| --------------- | ---------------- | -------------- |
+| Name of the Dog | Breed/Age/Color  | Bark/Sleep/Eat |
+
+### Defining Class and Declaring an Object (Instantiating)
+
+When an object is created, the class is said to be instantiated.
+A single class may have any number of instances.
+
+```python
+class Rectangle:
+    # Class Variable
+    type = "Shape"
+
+    # init method/constructor
+    def __init__(self, height="0", width="0"):
+        # Instance variavle
+        self.height = height
+        self.width = width
+
+    # Getter and Setter
+    @property
+    def height(self):
+        print("Retrieving height.")
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        if value.isdigit():
+            self.__height = value
+        else:
+            print("Please enter only numbers for the height.")
+
+    @property
+    def width(self):
+        print("Retrieving height.")
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        if value.isdigit():
+            self.__width = value
+        else:
+            print("Please enter only numbers for the width.")
+
+    # method
+    def get_area(self):
+        return int(self.__height) * int(self.__width)
+
+
+def main():
+    rect = Rectangle()
+    height = input("Enter Height: ")
+    width = input("Enter Width: ")
+    rect.height = height
+    rect.width = width
+    print("Area: ", rect.get_area())
+    print("Type: ", rect.type)
+
+main()
+
+# Output
+# Enter Height: 2
+# Enter Width: 3
+# Area:  6
+# Type:  Shape
+```
+
+#### `__init__` method
+
+It is similar to constructor. Its is used to initialize the object's state.
+It contains a collection of statement that are executed at the time of the object creation.
+
+#### Getter and Setter in Python
+
+Getters and setters are often used in python when:-
+
+-   We need to add validation logic around getting and setting a value.
+-   To avoid direct access of a class field.
