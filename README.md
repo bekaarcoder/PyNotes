@@ -1946,3 +1946,94 @@ Getters and setters are often used in python when:-
 
 -   We need to add validation logic around getting and setting a value.
 -   To avoid direct access of a class field.
+
+## Inheritance
+
+Inheritance is the capability of one class to inherit the properties from another class.
+It provides reusability of a code.
+It is transitive in nature, which means that if class B inherits from class A, then all the subclasses of B would automatically inherit from class A.
+
+```python
+# Parent or Super Class
+class Decimal:
+    def __init__(self, number, places):
+        self.number = number
+        self.places = places
+
+    def __str__(self):
+        return f"{self.number:.{self.places}f}"
+
+
+# Child or Sub Class
+class Currency(Decimal):
+    def __init__(self, number, places, symbol):
+        super().__init__(number, places)
+        self.symbol = symbol
+
+    def __str__(self):
+        return f"{self.symbol}{super().__str__()}"
+
+
+print(Decimal(15.6789, 3)) # 15.679
+print(Currency(15.6789, 2, '$')) # $15.68
+
+```
+
+## Class Method and Static Method
+
+**Class Method**
+A class method is nound to the class and not the object of the class.
+Class methods have access to the class state and it can aslo modify the class state that would apply across all the instance of the class.
+
+**Static Method**
+A static method is also bound to the class and not the object of the class.
+Static method can't access or modify the class state.
+
+```python
+class Employees:
+    no_of_leaves = 10
+
+    def __init__(self, name, salary, role):
+        self.name = name
+        self.salary = salary
+        self.role = role
+
+    def display_details(self):
+        print(f"{self.name} salary is {self.salary} and job role is {self.role}. No of leaves is {self.no_of_leaves}")
+
+    @classmethod
+    def change_leaves(cls, leaves):
+        print("Changing no of leaves...")
+        cls.no_of_leaves = leaves
+
+    # Class Methods as alternative constructor
+    @classmethod
+    def from_str(cls, string):
+        name, salary, job = string.split('-')
+        return cls(name, int(salary), job)
+
+    @staticmethod
+    def is_jobless(salary):
+        print(salary < 1)
+
+
+john = Employees("John", 2000, "Instructor")
+john.display_details()
+john.change_leaves(12)
+john.display_details()
+
+rahul = Employees.from_str("Rahul-3000-Engineer")
+rahul.display_details()
+
+karan = Employees.from_str("Karan-0-Student")
+karan.display_details()
+karan.is_jobless(karan.salary)
+
+# Output
+# John salary is 2000 and job role is Instructor. No of leaves is 10
+# Changing no of leaves...
+# John salary is 2000 and job role is Instructor. No of leaves is 12
+# Rahul salary is 3000 and job role is Engineer. No of leaves is 12
+# Karan salary is 0 and job role is Student. No of leaves is 12
+# True
+```
