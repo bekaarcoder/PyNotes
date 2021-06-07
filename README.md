@@ -2130,6 +2130,8 @@ print(f"Finished in {round(finish-start, 2)} seconds")
 # Finished in 5.02 seconds
 ```
 
+[More Thread Examples](https://github.com/shashanksmaty/PyNotes/tree/main/PythonBootcamp/Threads)
+
 ## Multiprocessing
 
 Ability of a system to support more than one processor at the same time
@@ -2213,3 +2215,5 @@ print(f"Finished in {round(finish-start, 2)} seconds")
 # Done sleeping!
 # Finished in 5.02 seconds
 ```
+
+[More Multiprocessing Examples](https://github.com/shashanksmaty/PyNotes/tree/main/PythonBootcamp/Multiprocessing)
