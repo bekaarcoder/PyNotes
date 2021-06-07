@@ -2037,3 +2037,179 @@ karan.is_jobless(karan.salary)
 # Karan salary is 0 and job role is Student. No of leaves is 12
 # True
 ```
+
+## Threads
+
+In python, a thread is an object which
+
+-   hold data,
+-   run with methods,
+-   stores in data structure,
+-   passed as a parameters to methods
+
+A thread can also be executed as a process.
+During its lifetime, a thread can be in various state.
+`threading` module supports thread in python.
+
+```python
+import threading
+import time
+
+start = time.perf_counter()
+
+
+def do_something(seconds):
+    print(f"Sleeping {seconds} seconds...")
+    time.sleep(seconds)
+    print("Done sleeping...")
+
+# creating a new thread
+t1 = threading.Thread(target=do_something, args=[1])
+t2 = threading.Thread(target=do_something, args=[1])
+
+# start a thread
+t1.start()
+t2.start()
+
+t1.join() # wait until thread t1 completes
+t2.join() # wait until thread t2 completes
+
+finish = time.perf_counter()
+
+print(f"Finished in {round(finish-start, 2)} seconds")
+
+# Output
+# Sleeping 1 seconds
+# Sleeping 1 seconds
+# Done Sleeping
+# Done Sleeping
+# Finished in 1.02 seconds
+```
+
+> For the above code, if we run the program without using thread, it will take longer than 2 secs as do_something() method will run one after another.
+
+### ThreadPoolExecutor
+
+From Python 3.2 onwards, a new class called **ThreadPoolExecutor** was introduced in `concurrent.futures` module to efficiently manage and create thread.
+
+```python
+import concurrent.futures
+import time
+
+start = time.perf_counter()
+
+
+def do_something(seconds):
+    print(f"Sleeping {seconds} seconds...")
+    time.sleep(seconds)
+    return "Done sleeping!"
+
+
+with concurrent.futures.ThreadPoolExecutor() as executor:
+    secs = [i for i in range(1, 6)]
+    results = executor.map(do_something, secs)
+
+    for result in results:
+        print(result)
+
+finish = time.perf_counter()
+
+print(f"Finished in {round(finish-start, 2)} seconds")
+
+# Output
+# Sleeping 1 seconds...
+# Sleeping 2 seconds...
+# Sleeping 3 seconds...
+# Sleeping 4 seconds...
+# Sleeping 5 seconds...
+# Done sleeping!
+# Done sleeping!
+# Done sleeping!
+# Done sleeping!
+# Done sleeping!
+# Finished in 5.02 seconds
+```
+
+## Multiprocessing
+
+Ability of a system to support more than one processor at the same time
+In python, `multiprocessing` module supports multiprocessing.
+
+```python
+import multiprocessing
+import time
+
+
+def do_something(seconds):
+    print(f"Sleeping {seconds} seconds...")
+    time.sleep(seconds)
+    print("Done sleeping...")
+
+
+if __name__ == '__main__':
+    start = time.perf_counter()
+
+    # create a process
+    p1 = multiprocessing.Process(target=do_something, args=[1])
+    p2 = multiprocessing.Process(target=do_something, args=[1])
+
+    # start a process
+    p1.start()
+    p2.start()
+
+    p1.join() # wait until p1 completes
+    p2.join() # wait until p2 completes
+
+    finish = time.perf_counter()
+
+    print(f"Finished in {round(finish - start, 2)} seconds")
+
+# Output
+# Sleeping 1 seconds
+# Sleeping 1 seconds
+# Done Sleeping
+# Done Sleeping
+# Finished in 1.02 seconds
+```
+
+### ProcessPoolExecutor
+
+From Python 3.2 onwards, a new class called **ProcessPoolExecutor** was introduced in `concurrent.futures` module to efficiently manage and create process.
+
+```python
+import concurrent.futures
+import time
+
+start = time.perf_counter()
+
+
+def do_something(seconds):
+    print(f"Sleeping {seconds} seconds...")
+    time.sleep(seconds)
+    return "Done sleeping!"
+
+
+with concurrent.futures.ProcessPoolExecutor() as executor:
+    secs = [i for i in range(1, 6)]
+    results = executor.map(do_something, secs)
+
+    for result in results:
+        print(result)
+
+finish = time.perf_counter()
+
+print(f"Finished in {round(finish-start, 2)} seconds")
+
+# Output
+# Sleeping 1 seconds...
+# Sleeping 2 seconds...
+# Sleeping 3 seconds...
+# Sleeping 4 seconds...
+# Sleeping 5 seconds...
+# Done sleeping!
+# Done sleeping!
+# Done sleeping!
+# Done sleeping!
+# Done sleeping!
+# Finished in 5.02 seconds
+```
