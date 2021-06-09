@@ -19,6 +19,11 @@ class User:
             )
 
     @classmethod
+    def delete_user_by_email(cls, email):
+        with ConnectionFromPool() as cursor:
+            cursor.execute("delete from users where email = %s", (email,))
+
+    @classmethod
     def load_from_db_by_email(cls, email):
         with ConnectionFromPool() as cursor:
             cursor.execute("select * from users where email = %s", (email,))
