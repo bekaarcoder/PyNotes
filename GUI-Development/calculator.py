@@ -37,6 +37,7 @@ class Calculator:
             self.add_trigger = False
             self.sub_trigger = False
             self.calc_value = float(self.entry_value.get())
+
             if value == "/":
                 self.div_trigger = True
             elif value == "*":
@@ -49,6 +50,10 @@ class Calculator:
             self.number_entry.delete(0, "end")
 
     def equal_button_press(self):
+        if self.entry_value.get() == "":
+            entry_value_for_calc = self.calc_value
+        else:
+            entry_value_for_calc = float(self.entry_value.get())
         if (
             self.add_trigger
             or self.sub_trigger
@@ -56,20 +61,16 @@ class Calculator:
             or self.div_trigger
         ):
             if self.add_trigger:
-                solution = self.calc_value + float(self.entry_value.get())
+                solution = self.calc_value + entry_value_for_calc
             elif self.sub_trigger:
-                solution = self.calc_value - float(self.entry_value.get())
+                solution = self.calc_value - entry_value_for_calc
             elif self.mult_trigger:
-                solution = self.calc_value * float(self.entry_value.get())
+                solution = self.calc_value * entry_value_for_calc
             elif self.div_trigger:
-                solution = self.calc_value / float(self.entry_value.get())
+                solution = self.calc_value / entry_value_for_calc
 
             self.number_entry.delete(0, "end")
             self.number_entry.insert(0, solution)
-            self.div_trigger = False
-            self.mult_trigger = False
-            self.add_trigger = False
-            self.sub_trigger = False
 
     def __init__(self, root):
         self.entry_value = StringVar(root, value="")
